@@ -1,438 +1,361 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLASSIFIED: Technical Personnel Assessment Report</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+        
+        body {
+            font-family: "Courier Prime", "Courier New", monospace;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 40px;
+            line-height: 1.6;
+            background-color: #f4f1e9;
+            color: #111;
+            position: relative;
+        }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            opacity: 0.03;
+            z-index: -1;
+            font-weight: bold;
+            color: #000;
+            white-space: nowrap;
+        }
 
-  <title>Thomas Wood - AI Scientist</title>
+        .classification-band {
+            background: #000;
+            color: #f4f1e9;
+            text-align: center;
+            padding: 10px;
+            margin: -40px -40px 40px -40px;
+            letter-spacing: 5px;
+            font-weight: bold;
+        }
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 3px double #000;
+            padding-bottom: 30px;
+        }
 
-  <!-- Custom fonts for this template -->
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+        .document-control {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 14px;
+            text-align: right;
+        }
 
-  <!-- Custom styles for this template -->
-  <link href="css/resume.min.css" rel="stylesheet">
+        h1 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
 
+        h2 {
+            font-size: 22px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            margin: 40px 0 20px;
+            letter-spacing: 2px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 25px 0 15px;
+            font-weight: bold;
+        }
+
+        .content {
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: "Courier Prime", monospace;
+        }
+
+        .stamp {
+            position: absolute;
+            top: 100px;
+            right: 60px;
+            transform: rotate(15deg);
+            border: 3px solid #cc0000;
+            color: #cc0000;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            margin-top: 80px;
+            border-top: 3px double #000;
+            padding-top: 20px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: ">";
+            position: absolute;
+            left: -20px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 20px;
+                background-color: white;
+            }
+            
+            .watermark {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-<body id="page-top">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Thomas Wood</span>
-      <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#awards">Certifications</a>
-        </li>
-      </ul>
+<body>
+    <div class="watermark">TOP SECRET</div>
+    <div class="classification-band">
+        TECHNICAL PERSONNEL ASSESSMENT // SECURITY CLEARANCE LEVEL: ALPHA
     </div>
-  </nav>
 
-  <div class="container-fluid p-0">
+    <div class="document-control">
+        REF: AI-SCI-TW-2024-0472<br>
+        DATE: 2024-01-20<br>
+        COPY: 2 OF 3
+    </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="w-100">
-        <h1 class="mb-0">Thomas
-          <span class="text-primary">Wood</span>
-        </h1>
-        <div class="subheading mb-5">Live Oak, FL · (971) 770-7914 ·
-          <a href="mailto:thomas@synpon.com">thomas@synpon.com</a>
+    <div class="header">
+        <h1>PERSONNEL CAPABILITY ANALYSIS</h1>
+        <div style="margin-bottom: 20px;">
+            <strong>SUBJECT:</strong> WOOD, THOMAS<br>
+            <strong>DESIGNATION:</strong> AI RESEARCH SCIENTIST<br>
+            <strong>LOCATION:</strong> LIVE OAK, FL<br>
+            <strong>CONTACT:</strong> thomas@synpon.com // (971) 770-7914
         </div>
-        <p class="lead mb-5"> Applied mathematician and AI scientist who is passionate about energy policy, biogerontology, and automation. My previous experience includes graph machine learning, computer vision, and open-ended question answering systems. Currently working on long document summarization and deep reinforcement learning for robotics.
-        </p>
-        <div class="social-icons">
-          <a href="https://linkedin.com/in/optimaldynamics">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/odellus">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="http://synpon.com">
-            <i class="fas fa-leaf"></i>
-          </a>
-          <a href="http://osrlab.org">
-            <i class="fas fa-robot"></i>
-          </a>
+    </div>
 
-          <a rel="me" href="https://sigmoid.social/@thomasw423">
-            <i class="fas fa-user-check"></i>
-          </a>
-        </div>
-      </div>
-    </section>
+    <div class="stamp">CLASSIFIED</div>
 
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">ML Engineer</h3>
-            <div class="subheading mb-3">OPTX</div>
-            <p>- Design and build data and machine learning pipelines </br>
-              - Expose ML services as API endpoints in Kubernetes </br>
-              - Architect lowest cost ML infrastructure </br>
-              - Implement a GPT4 + RAG powered chat bot to allow customers to talk to their structured data </br>
-             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Apr 2022 - Present</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">AI Scientist</h3>
-            <div class="subheading mb-3">LifeBio</div>
-            <p>- Architect and implement data pipelines for machine learning development </br>
-              - Long document summarization and question answering with Hugging Face Transformers </br>
-              - Design and construction of machine learning services with Docker and Kubernetes on Azure </br>
-              - Development of novel Speech-to-Text methods with SpeechBrain </br>
-              - Distributed training of large models with DeepSpeed </br>
-              - Assist co-workers in obtaining machine learning skills with Python </br>
-              - Evangelize MLOps and DevOps best practices </br>
-             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Feb 2021 - Apr 2022</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">AI Scientist</h3>
-            <div class="subheading mb-3">Synpon Labs</div>
-            <p>-Open ended question answering systems with Theano and PyTorch</br>
-               - State estimation, planning, and dynamic control of humanoid robotics with MuJoCo, Unity, and Drake </br>
-               - Deep reinforcement learning agents that play games with TensorFlow and PyTorch</br>
-               - Applied multi-modal computer vision research using PyTorch, Caffe, MS COCO, and Visual Genome</br>
-               - Open source and commercial software development and consulting services</br>
-             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jun 2013 - Present</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">ML Engineer</h3>
-            <div class="subheading mb-3">Portland General Electric</div>
-            <p> - Guide data science products from local development to AWS production environment</br>
-                - Architect machine learning workflows in the cloud</br>
-                - Evangelize modern best software engineering practices around MLOps in the cloud</br>
-                - Research and development of new data science products</br>
-                - Machine learning product management</br>
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jul 2020 - Dec 2020</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Data Scientist</h3>
-            <div class="subheading mb-3">Nike</div>
-            <p>- ETL development with Airflow, Spark, and AWS Redshift </br>
-               - Data visualization with AWS Quicksight </br>
-               - Python training lead </br>
-               - NodeJS microservices with AWS Lambdas for real time data analytics </br>
-               - Data and machine learning solution architecting </br>
-               - DevOps best practices with Jenkins, BitBucket, and Git </br>
-             </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">May 2019 - Present</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">AI Scientist</h3>
-            <div class="subheading mb-3">Huawei</div>
-            <p>- Visual relation detection, Scene graphs, and Semantic segmentation of images </br>
-               - Design of algorithms for graph deep learning at scale and applications to traffic modeling </br>
-               - Software engineering with Go, Linux, Docker, Flask, Python, and C/C++ </br>
-               - Graph database engineering with gremlin, neo4j, and huawei graph engine service
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jul 2018 - Jan 2019</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Machine Learning Scientist</h3>
-            <div class="subheading mb-3">Astound</div>
-            <p>
-              - Development and Implementation of AutoML systems </br>
-              - Applied Natural Language Understanding
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Dec 2017 - Mar 2018</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Data Analyst</h3>
-            <div class="subheading mb-3">Intel</div>
-            <p>
-              - Creation of automated ETL tools using Pandas and MongoDB </br>
-              - Strategic insight through analysis of time series data </br>
-              - Developed novel web scrapers for data acquisition
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">May 2017 - Aug 2017</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Senior Data Analyst</h3>
-            <div class="subheading mb-3">Microsoft</div>
-            <p>
-              - Text Categorization and Sentiment Analysis with AzureML </br>
-              - Data Munging with SQL and Python </br>
-              - Data Science training and consultation
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jan 2016 - Feb 2016</span>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Engineer</h3>
-            <div class="subheading mb-3">Sportswear, Inc.</div>
-            <p>
-              - Image processing and digital embroidery software engineering with CUDA and C++ </br>
-              - Build and test engineering with Python </br>
-              - Data analysis and strategic insight with Python
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Dec 2014 - May 2015</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Research Scientist</h3>
-            <div class="subheading mb-3">University of Washington School of Medicine</div>
-            <p>
-              - Developed software to repurpose FDA approved compounds through combining atomic level knowledge of compound-protein interactions with compound-disease associations which was able to identify a known use for over one in four FDA approved drugs which passed an initial screening against the human genome
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Apr 2013 - May 2013</span>
-          </div>
-        </div>
-
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb5">
-          <div class="resume-content">
-            <h3 class="mb-0">Research Fellow</h3>
-            <div class="subheading mb-3">University of Washington School of Medicine</div>
-            <p>
-              - Created method to simulate single nucleotide polymorphisms and used Gaussian anomaly detection to identify mutations which effected gene function
-            </p>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-primary">Jul 2011 - Aug 2012</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
-      <div class="w-100">
-        <h2 class="mb-5">Education</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">University of Washington</h3>
-            <div class="subheading mb-3">Master of Science - Applied Mathematics</div>
-            <p>Focus on Data Science, Scientific Computing, and Robotics</p>
-          </div>
-        </div>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Lamar University</h3>
-            <div class="subheading mb-3">Bachelor of Science - Physics</div>
-            <p>Focus on Quantum Field Theory and Longitudinal Optics</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
-      <div class="w-100">
-        <h2 class="mb-5">Skills</h2>
-
-        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul class="list-inline dev-icons">
-          <li class="list-inline-item">
-            <i class="fab fa-python"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-cuttlefish"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-node"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-lambda"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-ubuntu"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-git"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fab fa-docker"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fas fa-calculator"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fas fa-database"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="fas fa-fire"></i>
-          </li>
+    <div class="content">
+        <h2>EXECUTIVE SUMMARY</h2>
+        <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research. Primary focus areas include energy policy optimization, biogerontological computation, and advanced automation systems. Notable achievements in graph machine learning architecture, computer vision systems, and open-ended question answering frameworks. Current research vectors concentrate on long-form document summarization and deep reinforcement learning applications in robotics.</p>
+        
+        <p>Subject maintains active engagement with scientific community through following channels:</p>
+        <ul>
+            <li>Professional Network: linkedin.com/in/optimaldynamics</li>
+            <li>Code Repository: github.com/odellus</li>
+            <li>Research Portal: synpon.com</li>
+            <li>Laboratory: osrlab.org</li>
+            <li>Scientific Communications: sigmoid.social/@thomasw423</li>
         </ul>
+    </div>
 
-        <div class="subheading mb-3">Workflow</div>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Fundamentals of Project Management</br><i>Time? Scope? Cost?</i></li>
-            <li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Rigorous Problem Formulation</br><i>A problem well formulated is a problem half solved.</i></li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Exhaustive Literature and Open Source Ecosystem Review</br><i>The best code is the code you don't have to write.</i></li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Value add</br><i>What can we do to improve this? Where are the bottlenecks?</i></li>
-          <li>
-            <i class="fa-li fa fa-check"></i>
-            Agile Test Driven Development</br><i>Incremental improvement by starting small and building from the bottom up.</i></li>
-        </ul>
-      </div>
-    </section>
 
-    <hr class="m-0">
+    <div class="content">
+        <h2>OPERATIONAL HISTORY</h2>
+        
+        <div class="experience-item">
+            <div class="date">CURRENT ASSIGNMENT: APR 2022 - PRESENT</div>
+            <h3>MACHINE LEARNING ENGINEERING SPECIALIST // OPTX</h3>
+            <ul>
+                <li>Architect and deploy advanced data/ML pipeline infrastructure</li>
+                <li>Implement Kubernetes-based ML service deployment architecture</li>
+                <li>Optimize cost efficiency of ML computational resources</li>
+                <li>Design and deploy GPT4 + RAG systems for structured data interaction</li>
+            </ul>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
-      <div class="w-100">
-        <h2 class="mb-5">Interests</h2>
-        <p>Like most people, I enjoy spending time outside when I am not working. Whether it is riding bicycles, hiking, going on picnics, or just bringing a book to the beach, I can never get enough time outside in nature.</p>
-        <p class="mb-0">I am an avid reader of science fiction. If there's no space or advanced technology in a novel, I'm usually not very interested in reading it. If I'm not curled up with a cheap ebook in my spare time, I'm likely cooking delicious food, or writing in my journal.</p>
-      </div>
-    </section>
+        <div class="experience-item">
+            <div class="date">PRIOR ASSIGNMENT: FEB 2021 - APR 2022</div>
+            <h3>ARTIFICIAL INTELLIGENCE RESEARCHER // LIFEBIO</h3>
+            <ul>
+                <li>Engineered data pipelines for ML development processes</li>
+                <li>Implemented document analysis systems with Hugging Face Transformers</li>
+                <li>Constructed ML service architecture using Docker/Kubernetes on Azure</li>
+                <li>Advanced Speech-to-Text methodologies with SpeechBrain framework</li>
+                <li>Executed distributed training protocols with DeepSpeed</li>
+                <li>Directed ML skill advancement program for technical personnel</li>
+            </ul>
+        </div>
 
-    <hr class="m-0">
+        <div class="experience-item">
+            <div class="date">ONGOING RESEARCH: JUN 2013 - PRESENT</div>
+            <h3>LEAD SCIENTIST // SYNPON LABS</h3>
+            <ul>
+                <li>Question-answering systems development: Theano, PyTorch</li>
+                <li>Humanoid robotics control systems: MuJoCo, Unity, Drake</li>
+                <li>Deep reinforcement learning: TensorFlow, PyTorch</li>
+                <li>Multi-modal computer vision research: PyTorch, Caffe, MS COCO, Visual Genome</li>
+                <li>Open source development and technical consultation</li>
+            </ul>
+        </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
-      <div class="w-100">
-        <h2 class="mb-5">Certifications</h2>
-        <ul class="fa-ul mb-0">
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Deep Reinforcement Learning Nanodegree - Udacity</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Underactuated Robotics - MIT EdX</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Initiating and Planning Projects - UCI Coursera</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Plasma Physics and Applications - EPFL EdX</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Intro to Parallel Programming - Udacity</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Algorithms - Udacity</li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Data Wrangling with MongoDB - Udacity </li>
-          <li>
-            <i class="fa-li fa fa-certificate text-warning"></i>
-            Machine Learning - Stanford Coursera</li>
-        </ul>
-      </div>
-    </section>
+        <div class="experience-item">
+            <div class="date">TEMPORARY ASSIGNMENT: JUL 2020 - DEC 2020</div>
+            <h3>ML SYSTEMS ARCHITECT // PORTLAND GENERAL ELECTRIC</h3>
+            <ul>
+                <li>Directed ML product deployment from development to AWS production</li>
+                <li>Designed cloud-based ML workflow architectures</li>
+                <li>Implemented MLOps best practices in cloud environments</li>
+                <li>Conducted R&D for novel data science applications</li>
+            </ul>
+        </div>
 
-  </div>
+        <div class="experience-item">
+            <div class="date">ASSIGNMENT: MAY 2019 - PRESENT</div>
+            <h3>DATA SYSTEMS SPECIALIST // NIKE</h3>
+            <ul>
+                <li>ETL systems: Airflow, Spark, AWS Redshift</li>
+                <li>Analytics visualization: AWS Quicksight</li>
+                <li>Real-time analytics: NodeJS, AWS Lambda</li>
+                <li>Technical leadership: Python training program</li>
+            </ul>
+        </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <div class="experience-item">
+            <div class="date">RESEARCH ASSIGNMENT: JUL 2018 - JAN 2019</div>
+            <h3>AI RESEARCH SCIENTIST // HUAWEI</h3>
+            <ul>
+                <li>Visual relation detection and semantic analysis</li>
+                <li>Graph deep learning algorithms for traffic modeling</li>
+                <li>Systems engineering: Go, Linux, Docker, Flask, Python, C/C++</li>
+                <li>Graph database architecture: Gremlin, Neo4j</li>
+            </ul>
+        </div>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+        <div class="experience-item">
+            <div class="date">PRIOR ASSIGNMENTS OF NOTE</div>
+            <ul>
+                <li>ASTOUND (DEC 2017 - MAR 2018): AutoML systems development</li>
+                <li>INTEL (MAY 2017 - AUG 2017): Automated ETL systems</li>
+                <li>MICROSOFT (JAN 2016 - FEB 2016): Text analysis, AzureML</li>
+                <li>SPORTSWEAR INC (DEC 2014 - MAY 2015): CUDA/C++ engineering</li>
+                <li>UW MEDICINE (2011 - 2013): Computational biology research</li>
+            </ul>
+        </div>
+    </div>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
+    <div class="content">
+        <h2>ACADEMIC CREDENTIALS</h2>
+        
+        <div class="experience-item">
+            <div class="date">ADVANCED STUDIES</div>
+            <h3>UNIVERSITY OF WASHINGTON</h3>
+            <div style="margin-left: 20px;">
+                <strong>DEGREE:</strong> MASTER OF SCIENCE - APPLIED MATHEMATICS<br>
+                <strong>FOCUS:</strong> DATA SCIENCE, SCIENTIFIC COMPUTING, ROBOTICS<br>
+                <strong>CLEARANCE:</strong> ACADEMIC LEVEL 2
+            </div>
+        </div>
+
+        <div class="experience-item">
+            <div class="date">FOUNDATIONAL TRAINING</div>
+            <h3>LAMAR UNIVERSITY</h3>
+            <div style="margin-left: 20px;">
+                <strong>DEGREE:</strong> BACHELOR OF SCIENCE - PHYSICS<br>
+                <strong>FOCUS:</strong> QUANTUM FIELD THEORY, LONGITUDINAL OPTICS<br>
+                <strong>CLEARANCE:</strong> ACADEMIC LEVEL 1
+            </div>
+        </div>
+
+        <h2>TECHNICAL PROFICIENCIES</h2>
+        <div class="experience-item">
+            <strong>PRIMARY SYSTEMS:</strong>
+            <ul>
+                <li>Python Development Architecture</li>
+                <li>C/C++ Systems Programming</li>
+                <li>NodeJS Framework Implementation</li>
+                <li>Linux/Unix Operations</li>
+                <li>Git Version Control Protocol</li>
+                <li>Docker Containerization</li>
+                <li>Advanced Mathematical Computing</li>
+                <li>Database Architecture</li>
+            </ul>
+        </div>
+
+        <h2>RESEARCH INTERESTS</h2>
+        <div class="experience-item">
+            <p>Subject demonstrates particular affinity for outdoor environmental analysis when not engaged in primary research. Activities include bicycle navigation, terrain traversal, and extended observation of natural phenomena. Literary interests focus predominantly on speculative scientific scenarios and advanced technological theoretical frameworks.</p>
+        </div>
+
+        <h2>SUPPLEMENTARY CERTIFICATIONS</h2>
+        <div class="experience-item">
+            <ul>
+                <li>Deep Reinforcement Learning - Udacity Advanced Training</li>
+                <li>Underactuated Robotics - MIT Special Program</li>
+                <li>Project Management Protocols - UCI Research Division</li>
+                <li>Plasma Physics Applications - EPFL Advanced Studies</li>
+                <li>Parallel Computing Architecture - Udacity Technical Program</li>
+                <li>Advanced Algorithmic Analysis - Udacity Research Track</li>
+                <li>MongoDB Data Systems - Udacity Technical Division</li>
+                <li>Machine Learning Foundations - Stanford Research Program</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div style="margin-bottom: 20px; border: 1px solid #000; padding: 10px;">
+            <strong>DOCUMENT CONTROL INFORMATION</strong><br>
+            REF: PERSONNEL-TW-2024-FINAL<br>
+            CLASSIFICATION: TOP SECRET // SCI // NOFORN<br>
+            DECLASS DATE: 01/20/2054
+        </div>
+        
+        <div style="font-size: 12px;">
+            NOTICE: This document contains classified information affecting the national security of the United States within the meaning of the espionage laws, Title 18, U.S.C., Secs. 793 and 794.
+        </div>
+    </div>
+
+    <!-- TECHNICAL CONTROL SYSTEMS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="js/resume.min.js"></script>
 
 </body>
-
 </html>
