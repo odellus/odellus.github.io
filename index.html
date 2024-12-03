@@ -3,164 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLASSIFIED: Technical Personnel Assessment Report</title>
+    <title>Technical Personnel Assessment Report</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
-        
-        body {
-            font-family: "Courier Prime", "Courier New", monospace;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 40px;
-            line-height: 1.6;
-            background-color: #f4f1e9;
-            color: #111;
-            position: relative;
-        }
+       @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 120px;
-            opacity: 0.03;
-            z-index: -1;
-            font-weight: bold;
-            color: #000;
-            white-space: nowrap;
-        }
+body {
+    font-family: "Courier Prime", "Courier New", monospace;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    line-height: 1.6;
+    background-color: #f4f1e9;
+    color: #111;
+    position: relative;
+}
 
-        .classification-band {
-            background: #000;
-            color: #f4f1e9;
-            text-align: center;
-            padding: 10px;
-            margin: -40px -40px 40px -40px;
-            letter-spacing: 5px;
-            font-weight: bold;
-        }
+.classification-band {
+    background: #000;
+    color: #f4f1e9;
+    text-align: center;
+    padding: 10px;
+    margin: -40px -40px 40px -40px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
 
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            border-bottom: 3px double #000;
-            padding-bottom: 30px;
-        }
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    border-bottom: 3px double #000;
+    padding-bottom: 30px;
+}
 
-        .document-control {
-            position: absolute;
-            top: 20px;
-            right: 40px;
-            font-size: 14px;
-            text-align: right;
-        }
+.document-control {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 14px;
+    text-align: right;
+}
 
-        h1 {
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
+h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
 
-        h2 {
-            font-size: 22px;
-            text-transform: uppercase;
-            border-bottom: 2px solid #000;
-            padding-bottom: 10px;
-            margin: 40px 0 20px;
-            letter-spacing: 2px;
-        }
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin: 40px 0 20px;
+    letter-spacing: 2px;
+}
 
-        h3 {
-            font-size: 18px;
-            margin: 25px 0 15px;
-            font-weight: bold;
-        }
+h3 {
+    font-size: 18px;
+    margin: 25px 0 15px;
+    font-weight: bold;
+}
 
-        .content {
-            text-align: justify;
-            margin-bottom: 30px;
-        }
+.content {
+    text-align: justify;
+    margin-bottom: 30px;
+}
 
-        .experience-item {
-            margin-bottom: 40px;
-            page-break-inside: avoid;
-            position: relative;
-            padding-left: 20px;
-        }
+.experience-item {
+    margin-bottom: 40px;
+    page-break-inside: avoid;
+    position: relative;
+    padding-left: 20px;
+}
 
-        .experience-item::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
+.experience-item::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
 
-        .date {
-            font-weight: bold;
-            margin-bottom: 10px;
-            font-family: "Courier Prime", monospace;
-        }
+.date {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: "Courier Prime", monospace;
+}
 
-        .stamp {
-            position: absolute;
-            top: 100px;
-            right: 60px;
-            transform: rotate(15deg);
-            border: 3px solid #cc0000;
-            color: #cc0000;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 16px;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
+.footer {
+    margin-top: 80px;
+    border-top: 3px double #000;
+    padding-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
 
-        .footer {
-            margin-top: 80px;
-            border-top: 3px double #000;
-            padding-top: 20px;
-            font-size: 14px;
-            text-align: center;
-        }
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
 
-        ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
+ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
 
-        ul li {
-            margin-bottom: 10px;
-            position: relative;
-        }
+ul li::before {
+    content: ">";
+    position: absolute;
+    left: -20px;
+}
 
-        ul li::before {
-            content: ">";
-            position: absolute;
-            left: -20px;
-        }
+@media print {
+    body {
+        margin: 0;
+        padding: 20px;
+        background-color: white;
+    }
+}
 
-        @media print {
-            body {
-                margin: 0;
-                padding: 20px;
-                background-color: white;
-            }
-            
-            .watermark {
-                display: none;
-            }
-        }
     </style>
 </head>
 
 
 <body>
-    <div class="watermark">TOP SECRET</div>
+    <!-- <div class="watermark">TOP SECRET</div> -->
     <div class="classification-band">
-        TECHNICAL PERSONNEL ASSESSMENT // SECURITY CLEARANCE LEVEL: ALPHA
+        TECHNICAL PERSONNEL ASSESSMENT
     </div>
 
     <div class="document-control">
@@ -179,8 +149,6 @@
         </div>
     </div>
 
-    <div class="stamp">CLASSIFIED</div>
-
     <div class="content">
         <h2>EXECUTIVE SUMMARY</h2>
         <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research. Primary focus areas include energy policy optimization, biogerontological computation, and advanced automation systems. Notable achievements in graph machine learning architecture, computer vision systems, and open-ended question answering frameworks. Current research vectors concentrate on automated clinical documentation and agricultural robotics applications.</p>
@@ -191,7 +159,7 @@
             <li>Code Repository: <a href="https://github.com/odellus">github.com/odellus</a></li>
             <li>Research Portal: <a href="https://synpon.com">synpon.com</a></li>
             <li>Laboratory: <a href="https://osrlab.org">osrlab.org</a></li>
-            <li>Scientific Communications: <a href="https://bsky.app/odellus">bsky.app/odellus</a></li>
+            <li>Scientific Communications: <a href="https://bsky.app/profile/odellus.bsky.social">odellus.bsky.social</a></li>
         </ul>
     </div>
 
@@ -213,7 +181,7 @@
         
         <div class="experience-item">
             <div class="date">PRIOR ASSIGNMENT: APR 2022 - DEC 2023</div>
-            <h3>MACHINE LEARNING ENGINEERING SPECIALIST // OPTX</h3>
+            <h3>MACHINE LEARNING ENGINEER // OPTX</h3>
             <ul>
                 <li>Architect and deploy advanced data/ML pipeline infrastructure</li>
                 <li>Implement Kubernetes-based ML service deployment architecture</li>
@@ -249,7 +217,7 @@
 
         <div class="experience-item">
             <div class="date">TEMPORARY ASSIGNMENT: JUL 2020 - DEC 2020</div>
-            <h3>ML SYSTEMS ARCHITECT // PORTLAND GENERAL ELECTRIC</h3>
+            <h3>ML ENGINEER // PORTLAND GENERAL ELECTRIC</h3>
             <ul>
                 <li>Directed ML product deployment from development to AWS production</li>
                 <li>Designed cloud-based ML workflow architectures</li>
@@ -259,8 +227,8 @@
         </div>
 
         <div class="experience-item">
-            <div class="date">ASSIGNMENT: MAY 2019 - PRESENT</div>
-            <h3>DATA SYSTEMS SPECIALIST // NIKE</h3>
+            <div class="date">ASSIGNMENT: MAY 2019 - JUN 2020</div>
+            <h3>DATA SCIENTIST // NIKE</h3>
             <ul>
                 <li>ETL systems: Airflow, Spark, AWS Redshift</li>
                 <li>Analytics visualization: AWS Quicksight</li>
@@ -301,7 +269,6 @@
             <div style="margin-left: 20px;">
                 <strong>DEGREE:</strong> MASTER OF SCIENCE - APPLIED MATHEMATICS<br>
                 <strong>FOCUS:</strong> DATA SCIENCE, SCIENTIFIC COMPUTING, ROBOTICS<br>
-                <strong>CLEARANCE:</strong> ACADEMIC LEVEL 2
             </div>
         </div>
 
@@ -311,7 +278,6 @@
             <div style="margin-left: 20px;">
                 <strong>DEGREE:</strong> BACHELOR OF SCIENCE - PHYSICS<br>
                 <strong>FOCUS:</strong> QUANTUM FIELD THEORY, LONGITUDINAL OPTICS<br>
-                <strong>CLEARANCE:</strong> ACADEMIC LEVEL 1
             </div>
         </div>
 
@@ -359,7 +325,7 @@
         </div>
         
         <div style="font-size: 12px;">
-            NOTICE: This document contains classified information affecting the national security of the United States within the meaning of the espionage laws, Title 18, U.S.C., Secs. 793 and 794.
+            NOTICE: This document contains absolutely no classified information affecting the national security of the United States within the meaning of the espionage laws, Title 18, U.S.C., Secs. 793 and 794.
         </div>
     </div>
 
