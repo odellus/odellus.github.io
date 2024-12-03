@@ -3,366 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Personnel Assessment Report</title>
-    <style>
-       @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
-
-body {
-    font-family: "American Typewriter", "Courier New", "Courier", monospace;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 40px;
-    line-height: 1.6;
-    background-color: #f2f2f2;
-    color: #333333;
-    position: relative;
-    background-image: 
-        linear-gradient(rgba(222, 222, 222, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(222, 222, 222, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-}
-
-.classification-band {
-    background: #4a4a4a;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-    margin: -40px -40px 40px -40px;
-    letter-spacing: 5px;
-    font-weight: bold;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 60px;
-    border-bottom: 3px double #4a4a4a;
-    padding-bottom: 30px;
-}
-
-.document-control {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    font-size: 14px;
-    text-align: right;
-    color: #4a4a4a;
-}
-
-h1 {
-    font-size: 28px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    font-weight: bold;
-    color: #2b2b2b;
-}
-
-h2 {
-    font-size: 22px;
-    text-transform: uppercase;
-    border-bottom: 2px solid #4a4a4a;
-    padding-bottom: 10px;
-    margin: 40px 0 20px;
-    letter-spacing: 2px;
-    color: #2b2b2b;
-}
-
-h3 {
-    font-size: 18px;
-    margin: 25px 0 15px;
-    font-weight: bold;
-    color: #2b2b2b;
-}
-
-.content {
-    text-align: justify;
-    margin-bottom: 30px;
-}
-
-.experience-item {
-    margin-bottom: 40px;
-    page-break-inside: avoid;
-    position: relative;
-    padding-left: 20px;
-}
-
-.experience-item::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #4a4a4a;
-}
-
-.date {
-    font-weight: bold;
-    margin-bottom: 10px;
-    font-family: "American Typewriter", "Courier New", monospace;
-    color: #4a4a4a;
-}
-
-.footer {
-    margin-top: 80px;
-    border-top: 3px double #4a4a4a;
-    padding-top: 20px;
-    font-size: 14px;
-    text-align: center;
-    color: #4a4a4a;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-    position: relative;
-}
-
-ul li::before {
-    content: ">";
-    position: absolute;
-    left: -20px;
-    color: #4a4a4a;
-}
-
-a {
-    color: #4a4a4a;
-    text-decoration: none;
-    border-bottom: 1px dotted #4a4a4a;
-}
-
-a:hover {
-    color: #2b2b2b;
-    border-bottom: 1px solid #2b2b2b;
-}
-
-@media print {
-    body {
-        margin: 0;
-        padding: 20px;
-        background-color: white;
-        background-image: none;
-    }
-    
-    .classification-band {
-        background: #4a4a4a !important;
-        -webkit-print-color-adjust: exact;
-    }
-}
-
-    </style>
+    <title>Thomas Wood // AI Scientist</title>
+    <link rel="stylesheet" href="css/terminal.css">
 </head>
-
-
 <body>
-    <!-- <div class="watermark">TOP SECRET</div> -->
-    <div class="classification-band">
-        TECHNICAL PERSONNEL ASSESSMENT
-    </div>
-
-    <div class="document-control">
-        REF: AI-SCI-TW-2024-0472<br>
-        DATE: 2024-01-20<br>
-        COPY: 2 OF 3
-    </div>
-
-    <div class="header">
-        <h1>PERSONNEL CAPABILITY ANALYSIS</h1>
-        <div style="margin-bottom: 20px;">
-            <strong>SUBJECT:</strong> WOOD, THOMAS<br>
-            <strong>DESIGNATION:</strong> AI RESEARCH SCIENTIST<br>
-            <strong>LOCATION:</strong> LIVE OAK, FL<br>
-            <strong>CONTACT:</strong> thomas@synpon.com // (971) 770-7914
-        </div>
-    </div>
-
-    <div class="content">
-        <h2>EXECUTIVE SUMMARY</h2>
-        <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research. Primary focus areas include energy policy optimization, biogerontological computation, and advanced automation systems. Notable achievements in graph machine learning architecture, computer vision systems, and open-ended question answering frameworks. Current research vectors concentrate on automated clinical documentation and agricultural robotics applications.</p>
-        
-        <p>Subject maintains active engagement with scientific community through following channels:</p>
-        <ul>
-            <li>Professional Network: <a href="https://linkedin.com/in/optimaldynamics">linkedin.com/in/optimaldynamics</a></li>
-            <li>Code Repository: <a href="https://github.com/odellus">github.com/odellus</a></li>
-            <li>Research Portal: <a href="https://synpon.com">synpon.com</a></li>
-            <li>Laboratory: <a href="https://osrlab.org">osrlab.org</a></li>
-            <li>Scientific Communications: <a href="https://bsky.app/profile/odellus.bsky.social">odellus.bsky.social</a></li>
+    <nav class="side-nav">
+        <div class="terminal-id">[AI.SCIENTIST]</div>
+        <ul class="nav-links">
+            <li><a href="#welcome">[INIT]</a></li>
+            <li><a href="#about">[EXEC]</a></li>
+            <li><a href="#experience">[OPS]</a></li>
+            <li><a href="#education">[EDU]</a></li>
+            <li><a href="#skills">[SYS]</a></li>
+            <li><a href="#contact">[COM]</a></li>
         </ul>
-    </div>
+    </nav>
 
+    <div class="main-content">
+        <section id="welcome">
+            <h1>THOMAS WOOD</h1>
+            <div class="subtitle">AI SCIENTIST</div>
+        </section>
 
-    <div class="content">
-        <h2>OPERATIONAL HISTORY</h2>
-
-        <div class="experience-item">
-            <div class="date">CURRENT ASSIGNMENT: JAN 2024 - PRESENT</div>
-            <h3>APPLIED AI SCIENTIST // PIECES TECHNOLOGIES</h3>
-            <ul>
-                <li>Prompt engineering for clinical summaries and decision support pipelines</li>
-                <li>Data engineering for LLM pipelines with Airflow, Kubernetes, and Elasticsearch</li>
-                <li>Programming evangelism to physicians with Jupyter notebooks and Streamlit web apps</li>
-                <li>Received commendations for user-friendly prompt testing interfaces</li>
-                <li>Streamlined clinical workflow adoption through interactive notebooks</li>
-            </ul>
-        </div>
-        
-        <div class="experience-item">
-            <div class="date">PRIOR ASSIGNMENT: APR 2022 - DEC 2023</div>
-            <h3>MACHINE LEARNING ENGINEER // OPTX</h3>
-            <ul>
-                <li>Architect and deploy advanced data/ML pipeline infrastructure</li>
-                <li>Implement Kubernetes-based ML service deployment architecture</li>
-                <li>Optimize cost efficiency of ML computational resources</li>
-                <li>Design and deploy GPT4 + RAG systems for structured data interaction</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">PRIOR ASSIGNMENT: FEB 2021 - APR 2022</div>
-            <h3>ARTIFICIAL INTELLIGENCE RESEARCHER // LIFEBIO</h3>
-            <ul>
-                <li>Engineered data pipelines for ML development processes</li>
-                <li>Implemented document analysis systems with Hugging Face Transformers</li>
-                <li>Constructed ML service architecture using Docker/Kubernetes on Azure</li>
-                <li>Advanced Speech-to-Text methodologies with SpeechBrain framework</li>
-                <li>Executed distributed training protocols with DeepSpeed</li>
-                <li>Directed ML skill advancement program for technical personnel</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">ONGOING RESEARCH: JUN 2013 - PRESENT</div>
-            <h3>LEAD SCIENTIST // SYNPON LABS</h3>
-            <ul>
-                <li>Question-answering systems development: Theano, PyTorch</li>
-                <li>Humanoid robotics control systems: MuJoCo, Unity, Drake</li>
-                <li>Deep reinforcement learning: TensorFlow, PyTorch</li>
-                <li>Multi-modal computer vision research: PyTorch, Caffe, MS COCO, Visual Genome</li>
-                <li>Open source development and technical consultation</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">TEMPORARY ASSIGNMENT: JUL 2020 - DEC 2020</div>
-            <h3>ML ENGINEER // PORTLAND GENERAL ELECTRIC</h3>
-            <ul>
-                <li>Directed ML product deployment from development to AWS production</li>
-                <li>Designed cloud-based ML workflow architectures</li>
-                <li>Implemented MLOps best practices in cloud environments</li>
-                <li>Conducted R&D for novel data science applications</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">ASSIGNMENT: MAY 2019 - JUN 2020</div>
-            <h3>DATA SCIENTIST // NIKE</h3>
-            <ul>
-                <li>ETL systems: Airflow, Spark, AWS Redshift</li>
-                <li>Analytics visualization: AWS Quicksight</li>
-                <li>Real-time analytics: NodeJS, AWS Lambda</li>
-                <li>Technical leadership: Python training program</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">RESEARCH ASSIGNMENT: JUL 2018 - JAN 2019</div>
-            <h3>AI RESEARCH SCIENTIST // HUAWEI</h3>
-            <ul>
-                <li>Visual relation detection and semantic analysis</li>
-                <li>Graph deep learning algorithms for traffic modeling</li>
-                <li>Systems engineering: Go, Linux, Docker, Flask, Python, C/C++</li>
-                <li>Graph database architecture: Gremlin, Neo4j</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="date">PRIOR ASSIGNMENTS OF NOTE</div>
-            <ul>
-                <li>ASTOUND (DEC 2017 - MAR 2018): AutoML systems development</li>
-                <li>INTEL (MAY 2017 - AUG 2017): Automated ETL systems</li>
-                <li>MICROSOFT (JAN 2016 - FEB 2016): Text analysis, AzureML</li>
-                <li>SPORTSWEAR INC (DEC 2014 - MAY 2015): CUDA/C++ engineering</li>
-                <li>UW MEDICINE (2011 - 2013): Computational biology research</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="content">
-        <h2>ACADEMIC CREDENTIALS</h2>
-        
-        <div class="experience-item">
-            <div class="date">ADVANCED STUDIES</div>
-            <h3>UNIVERSITY OF WASHINGTON</h3>
-            <div style="margin-left: 20px;">
-                <strong>DEGREE:</strong> MASTER OF SCIENCE - APPLIED MATHEMATICS<br>
-                <strong>FOCUS:</strong> DATA SCIENCE, SCIENTIFIC COMPUTING, ROBOTICS<br>
+        <section id="about">
+            <h2>EXECUTIVE SUMMARY</h2>
+            <div class="terminal-box">
+                <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research. Primary focus areas include energy policy optimization, biogerontological computation, and advanced automation systems.</p>
+                
+            
+                    <p><a href="https://linkedin.com/in/optimaldynamics"> NET::linkedin/optimaldynamics</a></p>
+                    <p><a href="https://github.com/odellus"> SRC::github/odellus</a></p>
+                    <p><a href="https://synpon.com"> LAB::synpon.com</a></p>
+                    <p><a href="https://osrlab.org"> BASE::osrlab.org</a></p>
             </div>
-        </div>
+        </section>
 
-        <div class="experience-item">
-            <div class="date">FOUNDATIONAL TRAINING</div>
-            <h3>LAMAR UNIVERSITY</h3>
-            <div style="margin-left: 20px;">
-                <strong>DEGREE:</strong> BACHELOR OF SCIENCE - PHYSICS<br>
-                <strong>FOCUS:</strong> QUANTUM FIELD THEORY, LONGITUDINAL OPTICS<br>
+        <section id="experience">
+            <h2>OPERATIONAL HISTORY</h2>
+            
+            <div class="terminal-box">
+                <div class="date">[JAN 2024 - PRESENT]</div>
+                <h3>APPLIED AI SCIENTIST // PIECES TECHNOLOGIES</h3>
+                <ul>
+                    <li> Prompt engineering for clinical summaries and decision support pipelines</li>
+                    <li> Data engineering for LLM pipelines with Airflow, Kubernetes, and Elasticsearch</li>
+                    <li> Programming evangelism to physicians with Jupyter notebooks and Streamlit web apps</li>
+                    <li> Received commendations for user-friendly prompt testing interfaces</li>
+                    <li> Streamlined clinical workflow adoption through interactive notebooks</li>
+                </ul>
             </div>
-        </div>
 
-        <h2>TECHNICAL PROFICIENCIES</h2>
-        <div class="experience-item">
-            <strong>PRIMARY SYSTEMS:</strong>
-            <ul>
-                <li>Python Development Architecture</li>
-                <li>C/C++ Systems Programming</li>
-                <li>NodeJS Framework Implementation</li>
-                <li>Linux/Unix Operations</li>
-                <li>Git Version Control Protocol</li>
-                <li>Docker Containerization</li>
-                <li>Advanced Mathematical Computing</li>
-                <li>Database Architecture</li>
-            </ul>
-        </div>
+            <div class="terminal-box">
+                <div class="date">[APR 2022 - DEC 2023]</div>
+                <h3>MACHINE LEARNING ENGINEER // OPTX</h3>
+                <ul>
+                    <li> Architect and deploy advanced data/ML pipeline infrastructure</li>
+                    <li> Implement Kubernetes-based ML service deployment architecture</li>
+                    <li> Optimize cost efficiency of ML computational resources</li>
+                    <li> Design and deploy GPT4 + RAG systems for structured data interaction</li>
+                </ul>
+            </div>
 
-        <h2>RESEARCH INTERESTS</h2>
-        <div class="experience-item">
-            <p>Subject demonstrates particular affinity for outdoor environmental analysis when not engaged in primary research. Activities include bicycle navigation, terrain traversal, and extended observation of natural phenomena. Literary interests focus predominantly on speculative scientific scenarios and advanced technological theoretical frameworks.</p>
-        </div>
+            <div class="terminal-box">
+                <div class="date">[FEB 2021 - APR 2022]</div>
+                <h3>ARTIFICIAL INTELLIGENCE RESEARCHER // LIFEBIO</h3>
+                <ul>
+                    <li> Engineered data pipelines for ML development processes</li>
+                    <li> Implemented document analysis systems with Hugging Face Transformers</li>
+                    <li> Constructed ML service architecture using Docker/Kubernetes on Azure</li>
+                    <li> Advanced Speech-to-Text methodologies with SpeechBrain framework</li>
+                    <li> Executed distributed training protocols with DeepSpeed</li>
+                    <li> Directed ML skill advancement program for technical personnel</li>
+                </ul>
+            </div>
 
-        <h2>SUPPLEMENTARY CERTIFICATIONS</h2>
-        <div class="experience-item">
-            <ul>
-                <li>Deep Reinforcement Learning - Udacity Advanced Training</li>
-                <li>Underactuated Robotics - MIT Special Program</li>
-                <li>Project Management Protocols - UCI Research Division</li>
-                <li>Plasma Physics Applications - EPFL Advanced Studies</li>
-                <li>Parallel Computing Architecture - Udacity Technical Program</li>
-                <li>Advanced Algorithmic Analysis - Udacity Research Track</li>
-                <li>MongoDB Data Systems - Udacity Technical Division</li>
-                <li>Machine Learning Foundations - Stanford Research Program</li>
-            </ul>
-        </div>
+            <div class="terminal-box">
+                <div class="date">[JUN 2013 - PRESENT]</div>
+                <h3>LEAD SCIENTIST // SYNPON LABS</h3>
+                <ul>
+                    <li> Question-answering systems development: Theano, PyTorch</li>
+                    <li> Humanoid robotics control systems: MuJoCo, Unity, Drake</li>
+                    <li> Deep reinforcement learning: TensorFlow, PyTorch</li>
+                    <li> Multi-modal computer vision research: PyTorch, Caffe, MS COCO</li>
+                    <li> Open source development and technical consultation</li>
+                </ul>
+            </div>
+
+            <div class="terminal-box">
+                <div class="date">[JUL 2020 - DEC 2020]</div>
+                <h3>ML ENGINEER // PORTLAND GENERAL ELECTRIC</h3>
+                <ul>
+                    <li> Directed ML product deployment from development to AWS production</li>
+                    <li> Designed cloud-based ML workflow architectures</li>
+                    <li> Implemented MLOps best practices in cloud environments</li>
+                    <li> Conducted R&D for novel data science applications</li>
+                </ul>
+            </div>
+
+            <div class="terminal-box">
+                <div class="date">[MAY 2019 - JUN 2020]</div>
+                <h3>DATA SCIENTIST // NIKE</h3>
+                <ul>
+                    <li> ETL systems: Airflow, Spark, AWS Redshift</li>
+                    <li> Analytics visualization: AWS Quicksight</li>
+                    <li> Real-time analytics: NodeJS, AWS Lambda</li>
+                    <li> Technical leadership: Python training program</li>
+                </ul>
+            </div>
+
+            <div class="terminal-box">
+                <div class="date">[JUL 2018 - JAN 2019]</div>
+                <h3>AI RESEARCH SCIENTIST // HUAWEI</h3>
+                <ul>
+                    <li> Visual relation detection and semantic analysis</li>
+                    <li> Graph deep learning algorithms for traffic modeling</li>
+                    <li> Systems engineering: Go, Linux, Docker, Flask, Python, C/C++</li>
+                    <li> Graph database architecture: Gremlin, Neo4j</li>
+                </ul>
+            </div>
+
+            <div class="terminal-box">
+                <div class="date">[PRIOR ASSIGNMENTS]</div>
+                <ul>
+                    <li> ASTOUND [DEC 2017 - MAR 2018]: AutoML systems development</li>
+                    <li> INTEL [MAY 2017 - AUG 2017]: Automated ETL systems</li>
+                    <li> MICROSOFT [JAN 2016 - FEB 2016]: Text analysis, AzureML</li>
+                    <li> SPORTSWEAR INC [DEC 2014 - MAY 2015]: CUDA/C++ engineering</li>
+                    <li> UW MEDICINE [2011 - 2013]: Computational biology research</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>ACADEMIC CREDENTIALS</h2>
+            <div class="terminal-box">
+                <div class="date">[GRADUATE STUDIES]</div>
+                <h3>UNIVERSITY OF WASHINGTON</h3>
+                <p>DEGREE: M.S. APPLIED MATHEMATICS</p>
+                <p>FOCUS: DATA SCIENCE, SCIENTIFIC COMPUTING, ROBOTICS</p>
+            </div>
+            <div class="terminal-box">
+                <div class="date">[UNDERGRADUATE STUDIES]</div>
+                <h3>LAMAR UNIVERSITY</h3>
+                <p>DEGREE: B.S. PHYSICS</p>
+                <p>FOCUS: QUANTUM FIELD THEORY, LONGITUDINAL OPTICS</p>
+        </section>
+
+        <section id="skills">
+            <h2>TECHNICAL SYSTEMS</h2>
+            <div class="terminal-box">
+                <ul>
+                    <li>> Python Development Architecture</li>
+                    <li>> C/C++ Systems Programming</li>
+                    <li>> NodeJS Framework Implementation</li>
+                    <li>> Linux/Unix Operations</li>
+                    <li>> Git Version Control Protocol</li>
+                    <li>> Docker Containerization</li>
+                    <li>> Advanced Mathematical Computing</li>
+                    <li>> Database Architecture</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>CONTACT PROTOCOLS</h2>
+            <div class="terminal-box">
+                <ul>
+                    <li>> EMAIL: thomas@synpon.com</li>
+                    <li>> SIGNAL: (971) 770-7914</li>
+                    <li>> LOCATION: LIVE OAK, FL</li>
+                </ul>
+            </div>
+        </section>
     </div>
 
-    <div class="footer">
-        <div style="margin-bottom: 20px; border: 1px solid #000; padding: 10px;">
-            <strong>DOCUMENT CONTROL INFORMATION</strong><br>
-            REF: PERSONNEL-TW-2024-FINAL<br>
-            CLASSIFICATION: TOP SECRET // SCI // NOFORN<br>
-            DECLASS DATE: 01/20/2054
-        </div>
-        
-        <div style="font-size: 12px;">
-            NOTICE: This document contains absolutely no classified information affecting the national security of the United States within the meaning of the espionage laws, Title 18, U.S.C., Secs. 793 and 794.
-        </div>
-    </div>
-
-    <!-- TECHNICAL CONTROL SYSTEMS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="js/resume.min.js"></script>
-
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
