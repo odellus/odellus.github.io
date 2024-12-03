@@ -280,3 +280,16 @@ body {
 #welcome img {
     filter: grayscale(100%) contrast(320%) saturate(220%);
 }
+
+
+.boot-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    filter: grayscale(100%) brightness(150%);
+}
+
+.nav-logo {
+    margin-bottom: 20px;
+    filter: grayscale(100%) brightness(150%);
+}
