@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="css/terminal.css">
 </head>
 <body>
+    <div class="boot-sequence" id="boot-sequence">
+        <div class="terminal-text">
+            <p class="typewriter-line">NEXUS EVALUATION SYSTEMS</p>
+            <p class="typewriter-line">INITIALIZING CANDIDATE ASSESSMENT TERMINAL v9.7.2</p>
+            <p class="typewriter-line">LOADING NEURAL PATTERN RECOGNITION MATRICES</p>
+            <p class="typewriter-line">ACCESSING GLOBAL TALENT DATABASE</p>
+            <p class="typewriter-line">ANALYZING SKILL MATRICES</p>
+            <p class="typewriter-line">RANKING POTENTIAL CANDIDATES</p>
+            <div class="typewriter-line dot">
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+            </div>
+            <div class="delay-element"></div>            
+            <p class="typewriter-line">EVALUATION: COMPLETE</p>
+            <p class="typewriter-line">CANDIDATE IDENTIFICATION: SUCCESS</p>
+            <p class="typewriter-line">CANDIDATE ID: TW-773914</p>
+            <p class="typewriter-line blink-text">CLICK TO CONTINUE...</p>
+        </div>
+    </div>
+    
     <nav class="side-nav">
-        <div class="terminal-id">[AI.SCIENTIST]</div>
+        <div class="terminal-id">TW-773914</div>
         <ul class="nav-links">
             <li><a href="#welcome">[INIT]</a></li>
             <li><a href="#about">[EXEC]</a></li>
@@ -18,7 +39,8 @@
             <li><a href="#contact">[COM]</a></li>
         </ul>
     </nav>
-
+    
+    
     <div class="main-content">
         <section id="welcome">
             <h1>THOMAS WOOD</h1>
@@ -31,13 +53,12 @@
         <section id="about">
             <h2>EXECUTIVE SUMMARY</h2>
             <div class="terminal-box">
-                <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research. </p>
-                <p>Primary focus areas include energy policy optimization, biogerontological computation, and advanced automation systems.</p>
-                <p>
-
-                </p>
-            
-                    
+                <p>Subject demonstrates exceptional capabilities in applied mathematics and artificial intelligence research.</p>
+                <p>Academic foundation in physics and applied mathematics enables advanced problem-solving across multiple domains.</p>
+                <p>Current focus: Revolutionizing internal medicine through cybernetic systems and AI integration.</p>
+                <p>Notable side project: Agricultural automation via advanced photogrammetry techniques.</p>
+                <p>Assessment: High-value asset for complex technical initiatives.</p>
+                <p>Warning: Tendency to solve problems others haven't noticed yet.</p>
             </div>
         </section>
 
@@ -92,42 +113,13 @@
                 </ul>
             </div>
 
-            <div class="terminal-box">
-                <div class="date">[JUL 2020 - DEC 2020]</div>
-                <h3>ML ENGINEER // PORTLAND GENERAL ELECTRIC</h3>
-                <ul>
-                    <li> Directed ML product deployment from development to AWS production</li>
-                    <li> Designed cloud-based ML workflow architectures</li>
-                    <li> Implemented MLOps best practices in cloud environments</li>
-                    <li> Conducted R&D for novel data science applications</li>
-                </ul>
-            </div>
-
-            <div class="terminal-box">
-                <div class="date">[MAY 2019 - JUN 2020]</div>
-                <h3>DATA SCIENTIST // NIKE</h3>
-                <ul>
-                    <li> ETL systems: Airflow, Spark, AWS Redshift</li>
-                    <li> Analytics visualization: AWS Quicksight</li>
-                    <li> Real-time analytics: NodeJS, AWS Lambda</li>
-                    <li> Technical leadership: Python training program</li>
-                </ul>
-            </div>
-
-            <div class="terminal-box">
-                <div class="date">[JUL 2018 - JAN 2019]</div>
-                <h3>AI RESEARCH SCIENTIST // HUAWEI</h3>
-                <ul>
-                    <li> Visual relation detection and semantic analysis</li>
-                    <li> Graph deep learning algorithms for traffic modeling</li>
-                    <li> Systems engineering: Go, Linux, Docker, Flask, Python, C/C++</li>
-                    <li> Graph database architecture: Gremlin, Neo4j</li>
-                </ul>
-            </div>
 
             <div class="terminal-box">
                 <div class="date">[PRIOR ASSIGNMENTS]</div>
                 <ul>
+                    <li> PORTLAND GENERAL ELECTRIC [JUL 2020 - DEC 2020]: ML product deployment, cloud architecture</li>
+                    <li> NIKE [MAY 2019 - JUN 2020]: ETL systems, analytics visualization</li>
+                    <li> HUAWEI [JUL 2018 - JAN 2019]: Visual relation detection, graph deep learning</li>
                     <li> ASTOUND [DEC 2017 - MAR 2018]: AutoML systems development</li>
                     <li> INTEL [MAY 2017 - AUG 2017]: Automated ETL systems</li>
                     <li> MICROSOFT [JAN 2016 - FEB 2016]: Text analysis, AzureML</li>
@@ -135,6 +127,7 @@
                     <li> UW MEDICINE [2011 - 2013]: Computational biology research</li>
                 </ul>
             </div>
+
         </section>
 
         <section id="education">
@@ -150,6 +143,7 @@
                 <h3>LAMAR UNIVERSITY</h3>
                 <p>DEGREE: B.S. PHYSICS</p>
                 <p>FOCUS: QUANTUM FIELD THEORY, LONGITUDINAL OPTICS</p>
+            </div>
         </section>
 
         <section id="skills">
@@ -183,38 +177,93 @@
     </div>
 
     <script>
-       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute('href'));
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+       document.addEventListener('DOMContentLoaded', async () => {
+        const sideNav = document.querySelector('.side-nav');
+        const mainContent = document.querySelector('.main-content');
+        sideNav.style.display = 'none';
+        mainContent.style.display = 'none';
         
-        const lines = targetSection.querySelectorAll('p, li, h3, .date');
-        lines.forEach((line, index) => {
-            // Reset the line
+        const lines = document.querySelectorAll('.boot-sequence .typewriter-line');
+        for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
             line.style.width = '0';
             line.style.opacity = '0';
-            line.classList.add('typewriter-line');
             
-            // Trigger animation with proper timing
-            setTimeout(() => {
-                line.style.animation = `typeIn 1.5s ${index * 0.8}s forwards ease-out`;
-            }, 100);
+            if (i === 7) { // After "RANKING POTENTIAL CANDIDATES"
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                
+            }
+            // if (i == 8){
+            //     const dots = document.querySelectorAll('.dot');
+            //     dots.forEach(dot => {
+            //         dot.style.animation = 'none';
+            //         dot.style.opacity = '1';
+            //     });
+            // }
+            line.style.animation = `typeIn 1.5s ${i * 0.8}s forwards ease-out`;
+        }
+
+        document.addEventListener('click', function handleFirstClick() {
+            const bootSequence = document.getElementById('boot-sequence');
+            bootSequence.style.display = 'none';
+            sideNav.style.display = 'block';
+            mainContent.style.display = 'block';
+            document.removeEventListener('click', handleFirstClick);
+            
+            const initLink = document.querySelector('a[href="#welcome"]');
+            initLink.click();
         });
     });
-});
-
-setInterval(() => {
-    const body = document.querySelector('body');
-    body.style.animation = 'none';
-    void body.offsetHeight;
-    body.style.animation = 'flicker 0.01s infinite';
     
-    setTimeout(() => {
-        body.style.animation = 'none';
-    }, 100);
-}, Math.random() * 40 + 120);
-
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                
+                const lines = targetSection.querySelectorAll('p, li, h3, .date');
+                lines.forEach((line, index) => {
+                    line.style.width = '0';
+                    line.style.opacity = '0';
+                    line.classList.add('typewriter-line');
+                    
+                    setTimeout(() => {
+                        line.style.animation = `typeIn 1.5s ${index * 0.8}s forwards ease-out`;
+                    }, 50);
+                });
+            });
+        });
+    
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const currentSection = this.closest('section');
+                const sections = ['welcome', 'about', 'experience', 'education', 'skills', 'contact'];
+                const currentIndex = sections.indexOf(currentSection.id);
+                
+                let targetId;
+                if (this.classList.contains('next')) {
+                    targetId = sections[currentIndex + 1];
+                } else {
+                    targetId = sections[currentIndex - 1];
+                }
+                
+                if (targetId) {
+                    document.querySelector(`a[href="#${targetId}"]`).click();
+                }
+            });
+        });
+    
+        setInterval(() => {
+            const body = document.querySelector('body');
+            body.style.animation = 'none';
+            void body.offsetHeight;
+            body.style.animation = 'flicker 0.01s infinite';
+            
+            setTimeout(() => {
+                body.style.animation = 'none';
+            }, 50);
+        }, Math.random() * 40 + 120);
     </script>
+    
 </body>
 </html>
