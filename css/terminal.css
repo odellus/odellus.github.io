@@ -55,6 +55,7 @@ section {
 h1, h2, h3 {
     font-family: 'Teko', monospace;
     margin-bottom: 1.5rem;
+    padding: 20px;
 }
 
 h1 { font-size: 2.5rem; }
@@ -72,6 +73,7 @@ h3 { font-size: 1.5rem; }
 .date {
     color: var(--dim-color);
     margin-bottom: 0.5rem 1rem;
+    padding: 10px;
 }
 
 ul {
@@ -128,12 +130,37 @@ a:hover {
 
 section {
     min-height: 100vh;
-    padding: 40px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #333;
 }
 
 .terminal-box {
     margin-bottom: 1.0rem;
+    padding: 30px;
 }
 
+
+.subtitle {
+    padding: 30px;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #0f0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    animation: typing 3.5s steps(40, end),
+               blink-caret .75s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #0f0 }
+}
 
