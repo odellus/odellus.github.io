@@ -1,8 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 
 :root {
@@ -55,6 +51,7 @@ section {
 h1, h2, h3 {
     font-family: 'Teko', monospace;
     margin-bottom: 1.5rem;
+    padding: 20px;
 }
 
 h1 { font-size: 2.5rem; }
@@ -72,6 +69,7 @@ h3 { font-size: 1.5rem; }
 .date {
     color: var(--dim-color);
     margin-bottom: 0.5rem 1rem;
+    padding: 10px;
 }
 
 ul {
@@ -128,10 +126,37 @@ a:hover {
 
 section {
     min-height: 100vh;
-    padding: 40px 0;
+    padding: 30px 0;
     border-bottom: 1px solid #333;
 }
 
 .terminal-box {
     margin-bottom: 1.0rem;
+    padding: 30px;
 }
+
+
+.subtitle {
+    padding: 30px;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #0f0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    animation: typing 3.5s steps(40, end),
+               blink-caret .75s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #0f0 }
+}
+
