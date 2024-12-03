@@ -273,3 +273,6 @@ body {
     100% { opacity: 0; }
 }
 
+#welcome img {
+    filter: grayscale(100%) contrast(120%);
+}
