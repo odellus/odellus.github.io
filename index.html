@@ -183,14 +183,38 @@
     </div>
 
     <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetSection = document.querySelector(this.getAttribute('href'));
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+        
+        const lines = targetSection.querySelectorAll('p, li, h3, .date');
+        lines.forEach((line, index) => {
+            // Reset the line
+            line.style.width = '0';
+            line.style.opacity = '0';
+            line.classList.add('typewriter-line');
+            
+            // Trigger animation with proper timing
+            setTimeout(() => {
+                line.style.animation = `typeIn 1.5s ${index * 0.8}s forwards ease-out`;
+            }, 100);
         });
+    });
+});
+
+setInterval(() => {
+    const body = document.querySelector('body');
+    body.style.animation = 'none';
+    void body.offsetHeight;
+    body.style.animation = 'flicker 0.01s infinite';
+    
+    setTimeout(() => {
+        body.style.animation = 'none';
+    }, 100);
+}, Math.random() * 40 + 120);
+
     </script>
 </body>
 </html>
