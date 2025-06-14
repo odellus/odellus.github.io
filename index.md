@@ -32,8 +32,8 @@ About me ℹ️
 Projects I've worked on 🔧
 :::
 :::{grid-item-card}
-:link: blog.md
-My blog ✍️
+:link: journal.md
+My journal ✍️
 :::
 ::::
 

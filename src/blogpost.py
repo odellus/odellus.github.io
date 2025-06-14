@@ -15,7 +15,7 @@ root = Path(__file__).parent.parent
 
 # Aggregate all posts from the markdown and ipynb files
 posts = []
-for ifile in root.rglob("blog/**/*.md"):
+for ifile in root.rglob("journal/**/*.md"):
     if "drafts" in str(ifile):
         continue
 
