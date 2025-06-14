@@ -78,7 +78,7 @@ html_sidebars = {
 }
 
 # OpenGraph config
-ogp_site_url = "https://odellus.github.io/science_blog"
+ogp_site_url = "https://odellus.github.io"
 ogp_social_cards = {
     "line_color": "#4078c0",
     "image": "_static/profile-color-circle.png",
@@ -106,7 +106,7 @@ for old, new in redirect_folders.items():
 
 # -- ABlog ---------------------------------------------------
 
-blog_baseurl = "https://odellus.github.io/science_blog"
+blog_baseurl = "https://odellus.github.io"
 blog_title = "Thomas Wood"
 blog_path = "blog"
 blog_post_pattern = "blog/*/*"
