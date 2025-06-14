@@ -1,0 +1,52 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 91143d4d-0120-4764-9c1d-b16de83a4b9c
+  title: "Welcome"
+  authors:
+    - name: Thomas Wood
+      website: https://odellus.github.io/
+      id: thomas
+      orcid: 0009-0001-6099-2115
+      github: odellus
+      affiliations:
+        - name: Phytomech Industries
+          url: https://phytomech.com
+  # description:
+  # keywords: []
+  github: https://github.com/odellus/science_book
+  # thumbnail: _static/social_banner.png
+  plugins:
+    - type: executable
+      path: src/blogpost.py
+    - src/socialpost.mjs
+
+  toc:
+    - file: index.md
+    - file: about.md
+    - file: projects.md
+
+    - file: blog.md
+      children:
+      - title: "2025"
+        children:
+        - pattern: "blog/2025/**{.ipynb,.md}"
+      
+    
+site:
+  template: book-theme
+  options:
+    folders: true
+    logo_text: Thomas Wood
+    favicon: _static/profile-color-circle-small.png
+    style: _static/custom.css
+  domains:
+    - odellus.github.io
+
+  nav:
+    - title: About
+      url: /about
+    - title: Projects
+      url: /projects
+    - title: Blog
+      url: /blog

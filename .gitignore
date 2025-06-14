@@ -1,0 +1,27 @@
+_build
+
+.ipynb_checkpoints
+.vscode
+*/.ipynb_checkpoints/*
+.tox
+.nox
+.vscode
+__pycache__
+
+rss.xml
+feed.xml
+atom.xml
+
+uv.lock
+.python-version
+
+# JavaScript
+node_modules
+package-lock.json
+
+# Obsidian
+.makemd
+.obsidian
+.space
+.venv
+pyproject.toml
