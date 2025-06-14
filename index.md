@@ -13,15 +13,14 @@ site:
 
 :::{table}
 :class: col-body-right
-| A bit about me... |
-|---|
-|🥼 Head of AI Research and Development @ [Pieces](https://piecestech.com/) |
-|👨‍💻 Chief Technology Officer @ [Phytomech](https://phytomech.com/) |
-|📈 MS graduate in Applied Mathematics @ [University of Washington](https://washington.edu) |
+| A bit about me… |
+|—|
+|🥼 Head of AI Research and Development @ <a href="https://piecestech.com/">Pieces</a> |
+|👨‍💻 Chief Technology Officer @ <a href="https://phytomech.com/">Phytomech</a> |
+|📈 MS graduate in Applied Mathematics @ <a href="https://washington.edu">University of Washington</a> |
 :::
 
-I'm super cool. You should follow me on [at-proto](https://deer.social/profile/did:plc:6amf2dzllh6lvnsqxsr4nf6e).
-
+I'm super cool. You should follow me on <a href="https://deer.social/profile/did:plc:6amf2dzllh6lvnsqxsr4nf6e">at-proto</a>.
 
 ::::{grid}
 :::{grid-item-card}
@@ -33,13 +32,12 @@ About me ℹ️
 Projects I've worked on 🔧
 :::
 :::{grid-item-card}
-:link: blog.md
-My blog ✍️
+:link: journal.md
+My journal ✍️
 :::
 ::::
 
-
-## Recent blog posts
+<h2 id="recent-journal-posts">Recent journal posts</h2>
 
 :::{postlist}
 :number: 10

@@ -73,8 +73,8 @@ html_sidebars = {
     "publications": ["hello.html"],
     "projects": ["hello.html"],
     "talks": ["hello.html"],
-    "blog": ["ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"],
-    "blog/**": ["ablog/postcard.html", "ablog/recentposts.html", "ablog/archives.html"],
+    "journal": ["ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html"],
+    "journal/**": ["ablog/postcard.html", "ablog/recentposts.html", "ablog/archives.html"],
 }
 
 # OpenGraph config
@@ -86,11 +86,11 @@ ogp_social_cards = {
 
 
 rediraffe_redirects = {
-    "rust-governance.md": "blog/2018/rust_governance.md",
+    "rust-governance.md": "journal/2018/rust_governance.md",
 }
 # Update the posts/* section of the rediraffe redirects to find all files
 redirect_folders = {
-    "posts": "blog",
+    "posts": "journal",
 }
 from pathlib import Path
 
@@ -99,7 +99,7 @@ for old, new in redirect_folders.items():
         if newpath.suffix in [".ipynb", ".md"] and "ipynb_checkpoints" not in str(
             newpath
         ):
-            oldpath = str(newpath).replace("blog/", "posts/", 1)
+            oldpath = str(newpath).replace("journal/", "posts/", 1)
             # Skip pandoc because for some reason it's broken
             if "pandoc" not in str(newpath):
                 rediraffe_redirects[oldpath] = str(newpath)
@@ -108,8 +108,8 @@ for old, new in redirect_folders.items():
 
 blog_baseurl = "https://odellus.github.io"
 blog_title = "Thomas Wood"
-blog_path = "blog"
-blog_post_pattern = "blog/*/*"
+blog_path = "journal"
+blog_post_pattern = "journal/*/*"
 blog_feed_fulltext = True
 blog_feed_subtitle = "Come along and ride on a fantastic voyage"
 fontawesome_included = True
