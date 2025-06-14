@@ -25,11 +25,13 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
-    - file: journal.md
+
+    - file: blog.md
       children:
-        - title: "2025"
-          children:
-            - pattern: "journal/2025/**{.ipynb,.md}"
+      - title: "2025"
+        children:
+        - pattern: "blog/2025/**{.ipynb,.md}"
+      
     
 site:
   template: book-theme
@@ -46,5 +48,5 @@ site:
       url: /about
     - title: Projects
       url: /projects
-    - title: Journal
-      url: /journal
+    - title: Blog
+      url: /blog
