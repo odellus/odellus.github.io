@@ -14,7 +14,7 @@ project:
           url: https://phytomech.com
   # description:
   # keywords: []
-  github: https://github.com/odellus/science_book
+  github: https://github.com/odellus/odellus.github.io
   # thumbnail: _static/social_banner.png
   plugins:
     - type: executable
