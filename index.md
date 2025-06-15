@@ -33,7 +33,7 @@ Projects I've worked on 🔧
 :::
 :::{grid-item-card}
 :link: journal.md
-My journal ✍️
+My journal ✍️ 
 :::
 ::::
 

@@ -73,6 +73,24 @@ table td {
 }
 
 table th {
-    background-color: #f2f2f2;
+    background-color: #000000;
+    color: #ffffff;
     font-weight: bold;
+    border-color: var(--pst-color-border);
+}
+
+table td {
+    border-color: var(--pst-color-border);
+}
+
+/* Dark mode table styles */
+@media (prefers-color-scheme: dark) {
+    table th {
+        background-color: var(--pst-color-background);
+        color: var(--pst-color-text-base);
+    }
+    
+    table td {
+        border-color: #444;
+    }
 }
