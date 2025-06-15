@@ -91,15 +91,15 @@ plugin = {
 
 children = []
 for ix, irow in posts.iterrows():
-    # Convert path to ABlog's expected format
+    # Convert path to URL format
     path_parts = str(irow['path']).split('/')
     if len(path_parts) == 3:  # year/month/filename
         year, month, filename = path_parts
-        # Convert to lowercase for consistency
+        # Convert month to lowercase
         month = month.lower()
-        # Remove the date prefix if it exists
-        if filename.startswith(year[-2:] + month[:3]):
-            filename = filename[len(year[-2:] + month[:3]):]
+        # For files that start with numbers, use just the month name
+        if filename[0].isdigit():
+            filename = month
         url = f"/journal/{year}/{month}/{filename}"
     else:
         url = f"/journal/{irow['path']}"

@@ -16,48 +16,57 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {}
 
 function createJournalEntry() {
-    const rootPath = vscode.workspace.rootPath;
-    if (!rootPath) {
+    const workspaceRoot = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+    if (!workspaceRoot) {
         vscode.window.showErrorMessage('No open folder/workspace detected');
         return;
     }
 
-    const date = new Date();
-    const year = date.getFullYear().toString();
-    const monthShort = date.toLocaleString('default', { month: 'short' });
-    const monthLong = date.toLocaleString('default', { month: 'long' });
-    const day = date.getDate().toString().padStart(2, '0');
-    const isoDate = date.toISOString().split('T')[0]; // YYYY-MM-DD format
-
-    const journalPath = path.join(rootPath, 'journal', year, monthShort);
-    const journalFile = path.join(journalPath, `${day}${monthShort}${year}.md`);
-
-    // Create directory structure
-    if (!fs.existsSync(journalPath)) {
-        fs.mkdirSync(journalPath, { recursive: true });
+    const today = new Date();
+    const monthShort = today.toLocaleString('default', { month: 'short' }).toLowerCase();
+    const monthCapitalized = monthShort.charAt(0).toUpperCase() + monthShort.slice(1);
+    const day = today.getDate();
+    const year = today.getFullYear();
+    
+    // Create the directory structure if it doesn't exist
+    const yearDir = path.join(workspaceRoot, 'journal', year.toString());
+    const monthDir = path.join(yearDir, monthCapitalized);
+    
+    if (!fs.existsSync(yearDir)) {
+        fs.mkdirSync(yearDir, { recursive: true });
     }
-
-    if (!fs.existsSync(journalFile)) {
-        const fileContent = `---
-date: "${isoDate}"
-title: "Daily Journal - ${day} ${monthShort} ${year}"
+    if (!fs.existsSync(monthDir)) {
+        fs.mkdirSync(monthDir, { recursive: true });
+    }
+    
+    // Create the file with the new naming convention: month+day.md
+    const fileName = `${monthShort}${day}.md`;
+    const filePath = path.join(monthDir, fileName);
+    
+    // Create the file content
+    const content = `---
+date: "${year}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}"
+title: "Daily Journal - ${day} ${monthCapitalized} ${year}"
 ---
-
 `;
-        fs.writeFileSync(journalFile, fileContent);
-        updateMystYaml(year, monthShort);
-        openFile(journalFile);
-    } else {
-        vscode.window.showInformationMessage('Journal entry for today already exists.');
-        openFile(journalFile);
-    }
+    
+    fs.writeFileSync(filePath, content);
+    
+    // Update myst.yml with the new file
+    updateMystYaml(year.toString(), monthCapitalized);
+    
+    // Open the file
+    const openPath = vscode.Uri.file(filePath);
+    vscode.workspace.openTextDocument(openPath).then(doc => {
+        vscode.window.showTextDocument(doc);
+    });
 }
 
 function updateMystYaml(year: string, month: string) {
-    const rootPath = vscode.workspace.rootPath;
-    if (!rootPath) return;
+    const workspaceRoot = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath;
+    if (!workspaceRoot) return;
 
-    const mystYamlPath = path.join(rootPath, 'myst.yml');
+    const mystYamlPath = path.join(workspaceRoot, 'myst.yml');
     if (!fs.existsSync(mystYamlPath)) return;
 
     try {
@@ -78,28 +87,24 @@ function updateMystYaml(year: string, month: string) {
             journalToc.children.push(yearSection);
         }
 
-        // Find or create the month section
-        const monthLong = new Date(`${year}-${month}-01`).toLocaleString('default', { month: 'long' });
-        let monthSection = yearSection.children.find((child: any) => child.title === monthLong);
-        if (!monthSection) {
-            monthSection = {
-                title: monthLong,
-                children: []
-            };
-            yearSection.children.push(monthSection);
-        }
+        // Get all month directories for this year
+        const yearDir = path.join(workspaceRoot, 'journal', year);
+        if (!fs.existsSync(yearDir)) return;
 
-        // Add the pattern if it doesn't exist
-        const monthPattern = `journal/${year}/${month}/**{.ipynb,.md}`;
-        const patternExists = monthSection.children.some((child: any) => 
-            child.pattern === monthPattern
-        );
-
-        if (!patternExists) {
-            monthSection.children.push({
-                pattern: monthPattern
+        const months = fs.readdirSync(yearDir)
+            .filter(dir => fs.statSync(path.join(yearDir, dir)).isDirectory())
+            .sort((a, b) => {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                return months.indexOf(a) - months.indexOf(b);
             });
-        }
+
+        // Update the TOC to match the directory structure
+        yearSection.children = months.map(monthDir => ({
+            title: monthDir,
+            children: [{
+                pattern: `journal/${year}/${monthDir}/**{.ipynb,.md}`
+            }]
+        }));
 
         // Write back the updated config
         fs.writeFileSync(mystYamlPath, yaml.dump(mystConfig));

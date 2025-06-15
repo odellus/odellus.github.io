@@ -132,8 +132,11 @@ post_redirect_refresh = 1
 post_auto_image = 1
 post_auto_excerpt = 2
 
-# Just use the file paths directly
+# Use case-sensitive paths for URLs
 blog_post_url_format = "{path}"
+blog_post_pattern_format = "{path}"
+blog_post_date_format = "{path}"
+blog_post_slug_format = "{path}"
 
 # -- MyST and MyST-NB ---------------------------------------------------
 

@@ -24,7 +24,10 @@ project:
       children:
         - title: '2025'
           children:
-            - title: 'June'
+            - title: April
+              children:
+                - pattern: journal/2025/Apr/**{.ipynb,.md}
+            - title: June
               children:
                 - pattern: journal/2025/Jun/**{.ipynb,.md}
 site:
