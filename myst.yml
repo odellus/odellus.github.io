@@ -27,6 +27,7 @@ project:
             - title: June
               children:
                 - pattern: journal/2025/Jun/**{.ipynb,.md}
+  thumbnail: _static/social-banner.png
 site:
   template: book-theme
   options:
