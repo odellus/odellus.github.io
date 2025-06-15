@@ -96,7 +96,7 @@ html_sidebars = {
 ogp_site_url = "https://odellus.github.io"
 ogp_social_cards = {
     "line_color": "#4078c0",
-    "image": "_static/profile-color-circle.png",
+    "image": "_static/social-banner.png",
 }
 
 
