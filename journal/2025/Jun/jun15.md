@@ -40,7 +40,7 @@ S_{n-1}(R) &= \frac{2\,\pi^{n/2}}{\Gamma\!\bigl(\tfrac{n}{2}\bigr)}\,R^{\,n-1}
 :::
 
 ::::{note}
-:class: collapsible
+:class: dropdown
 ### Deriving the closed-form formulas for an $n$-ball
 
 #### 1. Start with the $n$-dimensional Gaussian integral
@@ -137,6 +137,39 @@ immediately gives the distance concentration at $\sqrt{2}$.
 
 This is why high-dimensional spaces behave so differently from our 3D intuition - the points are all effectively on the surface of a hollow shell (as shown in Eqn. [](#ball-formulas)), and they're all roughly the same distance apart (as shown in Eqn. [](#distance)).
 
+### Radial Distance Distribution
+
+What does the phrase "points cluster near the surface" really mean?  
+Let $R\in[0,1]$ be the distance from the origin to a point picked 
+*uniformly at random* inside the $n$–dimensional **unit** ball $B^n_1$.  
+The probability that $R$ falls in $(r, r+dr)$ equals the fraction of the
+ball's volume occupied by the thin spherical shell at that radius.  In
+symbols,
+
+:::{math}
+:label: radial-pdf
+f_n(r)\,dr\;=\;\frac{\text{vol of shell thickness }dr}{\text{vol}(B^n_1)}
+            \;=\;\frac{S_{n-1}(r)\,dr}{V_n(1)},
+:::
+
+where $S_{n-1}(r)$ is the surface area of the $(n{-}1)$-sphere of radius
+$r$ and $V_n(1)$ is the volume of the unit $n$-ball.
+Because $V_n(r)=V_n(1)\,r^{n}$, differentiating with respect to $r$
+shows that $S_{n-1}(r)=\tfrac{d}{dr}V_n(r)=n\,V_n(1)\,r^{n-1}$.  Plugging
+this into the fraction above immediately gives the **probability-density
+function**
+
+:::{math}
+:label: radial-pdf-closed
+f_n(r)\;=\;n\,r^{n-1},\qquad 0\le r\le 1.
+:::
+
+That single formula encapsulates the "surface concentration'' effect:
+for large $n$ the density is negligible until $r$ is very close to $1$.
+Indeed, $\mathbb E[R]=\tfrac{n}{n+1}\to 1$ and
+$\operatorname{Var}(R)=\tfrac{1}{(n+1)(n+2)}\to 0$, so almost every point
+lies within an $O\!\bigl(1/\sqrt n\bigr)$ shell of the boundary.
+
 ```{admonition} Why This Matters
 :class: tip
 This is exactly why I wanted to get MyST and LaTeX working - being able to write math like this, with proper equations and proofs, is crucial for sharing these ideas. I do math all the time, but it's usually on a notepad. Now I can actually publish my mathematical journey, with all the rigor and beauty intact.
@@ -183,12 +216,12 @@ This is the architecture I'm building - local development with the power of exec
 
 ## The Big Picture
 
-So here's where we are: I'm knee-deep in robotics with maniskill and lerobot, but that's just one piece of the puzzle. The real work is building a system that helps people explore and share their ideas - whether that's robotics, math, or anything else.
+I already live in the power-user endgame—VS Code, GitHub Pages, and an AI co-pilot wired straight into my editor. Spinning up a static site or a LaTeX-heavy blog post is *possible* today; the real pain is in the dozen tiny steps that sit between inspiration and a shareable link. Those paper-cuts don't just slow me down—they keep everyone else from even trying.
 
-The journal extension we're working on is the first step. It helps organize thoughts into a structure that makes sense, but it's not just about organization. It's about creating a space where people can write in their own voice, explore complex ideas, and share their knowledge while maintaining their authentic style.
+So the goal isn't to invent new powers, it's to *compress* the ones we have into a single, low-friction loop that anyone who can type Markdown can ride.
 
-The whtwnd clone is the next piece - a proper editor that helps people write and explore technical content. It's not just about making things look pretty. It's about creating a tool that helps people write more effectively, explore complex ideas, and share their knowledge while maintaining their authentic voice.
+1. **Capture → Journal extension.**  Works right inside whatever editor you love. Jot an idea, tag it, and it's instantly part of the knowledge graph—no copy-pasting, no context switching.
+2. **Refine → *whtwnd* editor.**  One click promotes a note into a full-blown article lab. Live code blocks, MathJax/LaTeX rendering, and a design system that makes even dense proofs look readable.
+3. **Publish → Zero-touch deploy.**  The build spins up locally, ships through a DO jump-box, and lands in GitHub Pages (or your own server) without you touching a terminal. Good-looking, citation-ready pages, every time.
 
-And the MyST/Jupyter Book integration ties it all together. It's not just about making things look pretty. It's about creating a system that helps people write more effectively, explore complex ideas, and share their knowledge while maintaining their authentic voice.
-
-The goal isn't to replace human writing - it's to help people be more intentional about how they organize and present their thoughts, whether that's a tweet, a blog post, or a full-blown book. Most of us are more eloquent than we seem - we just need help getting our thoughts together.
+If we can make *that* cycle feel as effortless as pressing ⌘-S, then the subject matter—robotics tutorials, category-theory deep dives, garden-variety blog posts—becomes almost incidental. And when the tooling handles my edge-case chaos, chances are it will feel like magic for everyone else.

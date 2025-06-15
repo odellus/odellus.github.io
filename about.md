@@ -7,21 +7,20 @@ Chief Technology Officer, Phytomech Industries
 :class: col-body-inset-right
 
 :::::{card}
-**2013** Founded WG-APL
+**2025** Head of AI R&D at Pieces
 ^^^
-Started a one man band consulting firm and did a lot of tutoring and a little consulting.
+Leading cross-functional research, rapid prototyping of AI agents/APIs, and setting technical direction from experimentation to scalable production.
 :::::
 
 :::::::
-
 
 :::::::{div}
 :class: col-body-inset-left
 
 :::::{card}
-**2013** Graduate school at University of Washington
+**2025** Phytomech Robotics & Farm
 ^^^
-I studied applied mathematics while working on protein structure prediction for synthetic and systems biology for the school of medicine.
+Bootstrapped a research farm to test and deploy our Phytomech robots—starting with general-purpose pick-and-place and now moving toward crop-specific harvesting and planting systems.
 :::::
 
 :::::::
@@ -30,9 +29,66 @@ I studied applied mathematics while working on protein structure prediction for 
 :class: col-body-inset-right
 
 :::::{card}
-**2007** Graduated from Lamar University
+**2021** AI Scientist at LifeBio
 ^^^
-Graduated from Lamar University with a B.S. in Physics.
+Architected ML pipelines for long-document summarization, speech-to-text, and distributed training; championed MLOps culture across the team.
+:::::
+
+:::::::
+
+:::::::{div}
+:class: col-body-inset-left
+
+:::::{card}
+**2018** AI Scientist at Huawei
+^^^
+Worked on large-scale graph deep learning, visual relation detection, and semantic segmentation; engineered graph databases and ML systems with Go, C/C++, and Python.
+:::::
+
+:::::::
+
+:::::::{div}
+:class: col-body-inset-right
+
+:::::{card}
+**2016** Senior Data Analyst at Microsoft
+^^^
+Focused on text categorization and sentiment analysis with AzureML, plus extensive SQL/Python data work and training colleagues in data science best-practices.
+:::::
+
+:::::::
+
+:::::::{div}
+:class: col-body-inset-left
+
+:::::{card}
+**2013** Founded WG-APL ➜ Phytomech Industries
+^^^
+- Started as a one-man data-science consulting outfit.  
+- Evolved into Phytomech Industries—an agricultural-robotics company I now run as CTO.  
+- Built the first prototypes of autonomous pick-and-place field robots.
+:::::
+
+:::::::
+
+:::::::{div}
+:class: col-body-inset-right
+
+:::::{card}
+**2013** Graduate school at University of Washington
+^^^
+Studied applied mathematics while doing protein-structure prediction for synthetic and systems biology in the School of Medicine.
+:::::
+
+:::::::
+
+:::::::{div}
+:class: col-body-inset-left
+
+:::::{card}
+**2007** B.S. in Physics, Lamar University
+^^^
+Graduated with honors and began my journey into data and computer science.
 :::::
 
 :::::::
