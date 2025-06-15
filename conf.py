@@ -99,6 +99,7 @@ ogp_social_cards = {
     "image": "_static/social-banner.png",
 }
 
+ogp_image = "_static/social-banner.png"
 
 rediraffe_redirects = {
     "rust-governance.md": "blog/2018/rust_governance.md",
@@ -129,7 +130,7 @@ blog_feed_fulltext = True
 blog_feed_subtitle = "Come along and ride on a fantastic voyage"
 fontawesome_included = True
 post_redirect_refresh = 1
-post_auto_image = 1
+post_auto_image = 0
 post_auto_excerpt = 2
 
 # Use case-sensitive paths for URLs
