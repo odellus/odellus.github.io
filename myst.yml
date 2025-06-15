@@ -1,8 +1,7 @@
-# See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
   id: 91143d4d-0120-4764-9c1d-b16de83a4b9c
-  title: "Welcome"
+  title: Welcome
   authors:
     - name: Thomas Wood
       website: https://odellus.github.io/
@@ -12,27 +11,22 @@ project:
       affiliations:
         - name: Phytomech Industries
           url: https://phytomech.com
-  # description:
-  # keywords: []
   github: https://github.com/odellus/odellus.github.io
-  # thumbnail: _static/social_banner.png
   plugins:
     - type: executable
       path: src/blogpost.py
     - src/socialpost.mjs
-
   toc:
     - file: index.md
     - file: about.md
     - file: projects.md
-
     - file: journal.md
       children:
-      - title: "2025"
-        children:
-        - pattern: "journal/2025/**{.ipynb,.md}"
-      
-    
+        - title: '2025'
+          children:
+            - title: 'June'
+              children:
+                - pattern: journal/2025/Jun/**{.ipynb,.md}
 site:
   template: book-theme
   options:
@@ -42,7 +36,6 @@ site:
     style: _static/custom.css
   domains:
     - odellus.github.io
-
   nav:
     - title: About
       url: /about

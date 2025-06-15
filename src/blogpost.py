@@ -12,23 +12,36 @@ import unist as u
 DEFAULTS = {"number": 10}
 
 root = Path(__file__).parent.parent
+journal_dir = root / "journal"
+
+print(f"Looking for posts in: {journal_dir}", file=sys.stderr)
 
 # Aggregate all posts from the markdown and ipynb files
 posts = []
-for ifile in root.rglob("journal/**/*.md"):
+for ifile in journal_dir.rglob("*.md"):
+    print(f"Found file: {ifile}", file=sys.stderr)
     if "drafts" in str(ifile):
+        print(f"Skipping draft: {ifile}", file=sys.stderr)
         continue
 
     text = ifile.read_text()
     try:
         _, meta, content = text.split("---", 2)
-    except Exception:
-        print(f"Skipping file with error: {ifile}", file=sys.stderr)
+    except Exception as e:
+        print(f"Skipping file with error: {ifile} - {str(e)}", file=sys.stderr)
         continue
 
     # Load in YAML metadata
     meta = safe_load(meta)
-    meta["path"] = ifile.relative_to(root).with_suffix("")
+    if meta is None:
+        print(f"Skipping file with invalid YAML: {ifile}", file=sys.stderr)
+        continue
+    
+    # Construct the path relative to journal directory
+    rel_path = ifile.relative_to(journal_dir)
+    meta["path"] = rel_path.with_suffix("")
+    print(f"Processed post: {meta['path']}", file=sys.stderr)
+    
     if "title" not in meta:
         lines = text.splitlines()
         for ii in lines:
@@ -78,10 +91,23 @@ plugin = {
 
 children = []
 for ix, irow in posts.iterrows():
+    # Convert path to ABlog's expected format
+    path_parts = str(irow['path']).split('/')
+    if len(path_parts) == 3:  # year/month/filename
+        year, month, filename = path_parts
+        # Convert to lowercase for consistency
+        month = month.lower()
+        # Remove the date prefix if it exists
+        if filename.startswith(year[-2:] + month[:3]):
+            filename = filename[len(year[-2:] + month[:3]):]
+        url = f"/journal/{year}/{month}/{filename}"
+    else:
+        url = f"/journal/{irow['path']}"
+        
     children.append(
         {
           "type": "card",
-          "url": f"/{irow['path'].with_suffix('')}",
+          "url": url,
           "children": [
             {
               "type": "cardTitle",
@@ -213,11 +239,13 @@ if __name__ == "__main__":
 
     if args.directive:
         data = json.load(sys.stdin)
-        declare_result(run_directive(args.directive, data))
+        result = run_directive(args.directive, data)
+        declare_result(result)
     elif args.transform:
         data = json.load(sys.stdin)
         declare_result(run_transform(args.transform, data))
     elif args.role:
         raise NotImplementedError
     else:
+        # If no arguments, just output the plugin configuration
         declare_result(plugin)

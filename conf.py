@@ -35,6 +35,21 @@ exclude_patterns = [
 
 html_theme = "pydata_sphinx_theme"
 
+html_theme_options = {
+    "navbar_align": "left",
+    "show_navbar_depth": 3,  # This will show journal/2025/Jun
+    "show_toc_level": 3,     # This will show journal/2025/Jun
+    "navbar_center": ["navbar-nav"],
+    "navbar_end": ["navbar-icon-links"],
+    "navbar_persistent": ["search-button"],
+    "navbar_secondary": ["page-toc"],
+    "navbar_primary": ["navbar-nav"],
+    "navbar_sidebar": ["sidebar-nav"],
+    "navbar_sidebar_collapse": True,
+    "navbar_sidebar_collapse_icon": True,
+    "navbar_sidebar_collapse_style": "overlay",
+}
+
 # html_theme_options = {
 #     "search_bar_text": "Search this site...",
 #     "analytics": {"google_analytics_id": "UA-88310237-1"},
@@ -109,13 +124,16 @@ for old, new in redirect_folders.items():
 blog_baseurl = "https://odellus.github.io"
 blog_title = "Thomas Wood"
 blog_path = "journal"
-blog_post_pattern = "journal/*/*"
+blog_post_pattern = "journal/*/*/*"  # This matches our myst.yml pattern
 blog_feed_fulltext = True
 blog_feed_subtitle = "Come along and ride on a fantastic voyage"
 fontawesome_included = True
 post_redirect_refresh = 1
 post_auto_image = 1
 post_auto_excerpt = 2
+
+# Just use the file paths directly
+blog_post_url_format = "{path}"
 
 # -- MyST and MyST-NB ---------------------------------------------------
 
