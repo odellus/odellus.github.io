@@ -94,3 +94,8 @@ table td {
         border-color: #444;
     }
 }
+
+/* Hide MyST logo from TOC */
+.bd-sidebar .bd-sidebar__bottom {
+    display: none;
+}
