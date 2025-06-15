@@ -27,117 +27,7 @@ Let's prove two fascinating properties of high-dimensional spaces:
 1. Points cluster near the surface of the N-ball
 2. Any two points are approximately $\sqrt{2}$ units apart
 
-### Surface Concentration
-
-Let's first derive the closed-form formulas for an $n$-ball:
-
-:::{math}
-:label: ball-formulas
-\begin{align}
-V_n(R) &= \frac{\pi^{n/2}}{\Gamma\!\bigl(\tfrac{n}{2}+1\bigr)}\,R^{\,n} \\
-S_{n-1}(R) &= \frac{2\,\pi^{n/2}}{\Gamma\!\bigl(\tfrac{n}{2}\bigr)}\,R^{\,n-1}
-\end{align}
-:::
-
-::::{note}
-:class: dropdown
-### Deriving the closed-form formulas for an $n$-ball
-
-#### 1. Start with the $n$-dimensional Gaussian integral
-Cartesian factorisation gives:
-
-:::{math}
-:label: gaussian
-\begin{align}
-I_n = \int_{\mathbb R^{n}}e^{-\lVert x\rVert^{2}}d^{\,n}x
-    = \Bigl(\int_{-\infty}^{\infty}e^{-t^{2}}dt\Bigr)^{\!n}
-    = \pi^{\,n/2}
-\end{align}
-:::
-
-#### 2. Rewrite in spherical coordinates
-Using $d^{\,n}x=r^{\,n-1}dr\,d\Omega$ and letting $S_{n-1}(1):=\displaystyle\int_{S^{n-1}}d\Omega$:
-
-:::{math}
-:label: spherical
-\begin{align}
-I_n = S_{n-1}(1)\int_{0}^{\infty}r^{\,n-1}e^{-r^{2}}dr
-\end{align}
-:::
-
-#### 3. Evaluate the radial integral
-Set $u=r^{2}\;(du=2r\,dr)$:
-
-:::{math}
-:label: gamma
-\begin{align}
-\int_{0}^{\infty}r^{\,n-1}e^{-r^{2}}dr
-   = \frac12\int_{0}^{\infty}u^{\tfrac{n}{2}-1}e^{-u}du
-   = \frac12\,\Gamma\!\Bigl(\frac{n}{2}\Bigr)
-\end{align}
-:::
-
-#### 4. Solve for surface area
-:::{math}
-:label: surface
-\begin{align}
-\pi^{n/2} = S_{n-1}(1)\;\frac12\,\Gamma\!\Bigl(\frac{n}{2}\Bigr)
-\;\;\Longrightarrow\;\;
-S_{n-1}(1) = \frac{2\,\pi^{n/2}}{\Gamma\!\bigl(\tfrac{n}{2}\bigr)}
-\end{align}
-:::
-
-#### 5. Integrate shells for volume
-:::{math}
-:label: volume
-\begin{align}
-V_n(1) = \int_{0}^{1}S_{n-1}(r)\,dr
-       = \int_{0}^{1}S_{n-1}(1)\,r^{\,n-1}dr
-       = \frac{S_{n-1}(1)}{n}
-       = \frac{\pi^{n/2}}{\Gamma\!\bigl(\tfrac{n}{2}+1\bigr)}
-\end{align}
-:::
-
-#### 6. Scale to general radius $R$
-:::{math}
-:label: scaling
-\begin{align}
-V_n(R) = V_n(1)\,R^{\,n},\qquad
-S_{n-1}(R) = S_{n-1}(1)\,R^{\,n-1}
-\end{align}
-:::
-
-Combining (4), (5), and (6) yields the desired closed forms.
-
-### Quick Gamma-function checkpoints
-- **Recurrence:** $\Gamma(z+1)=z\,\Gamma(z)$, giving $\Gamma(n)=(n-1)!$
-- **Half-integer base:** $\Gamma\!\bigl(\tfrac12\bigr)=\sqrt{\pi}$
-
-The Gamma function appears naturally because the radial Gaussian integral in (3) is exactly its defining integral at $z=n/2$.
-::::
-
-### Distance Concentration
-
-The pairwise distance convergence to $\sqrt{2}$ follows from three key insights:
-
-1. By the Central Limit Theorem, the random sum $S_n$ grows like $\sqrt{n}$
-2. By the Law of Large Numbers, each vector's length grows like $\sqrt{n}$; the product of two such lengths therefore grows like $n$
-3. Dividing the $\sqrt{n}$-sized numerator by the $n$-sized denominator forces the dot product toward 0 at speed $1/\sqrt{n}$
-
-Once $\langle X,Y \rangle$ goes to 0, the equation:
-
-:::{math}
-:label: distance
-\begin{align}
-|X-Y|^2 = 2(1 - \langle X,Y \rangle)
-\end{align}
-:::
-
-immediately gives the distance concentration at $\sqrt{2}$.
-
-This is why high-dimensional spaces behave so differently from our 3D intuition - the points are all effectively on the surface of a hollow shell (as shown in Eqn. [](#ball-formulas)), and they're all roughly the same distance apart (as shown in Eqn. [](#distance)).
-
-### Radial Distance Distribution
+# Radial Distance Distribution
 
 What does the phrase "points cluster near the surface" really mean?  
 Let $R\in[0,1]$ be the distance from the origin to a point picked 
@@ -164,20 +54,174 @@ function**
 f_n(r)\;=\;n\,r^{n-1},\qquad 0\le r\le 1.
 :::
 
+## Meaning of $f_n(r)$
+
+```{note}
+$f_n(r)$ is the **probability-density function (PDF) of the distance $R$** from the centre of the $n$-dimensional unit ball to a uniformly chosen random point.  
+Equivalently, $f_n(r)\,dr$ is the fraction of all points whose radius lies in the tiny interval $[r,r+dr]$.
+```
+
+---
+
+## Why $f_n(r)=n\,r^{n-1}$
+
+```{math}
+\text{(thin shell volume)} 
+    \;=\; \bigl[\text{surface area at radius }r\bigr]\,dr
+    \;=\; S_n\,r^{\,n-1}\,dr,
+```
+where $S_n$ is the surface area of the unit $(n-1)$-sphere.
+
+Because the point is chosen **uniformly**, its probability of landing in that shell is  
+```{math}
+\frac{S_n\,r^{\,n-1}\,dr}{V_n},
+```
+with $V_n$ the total volume of the unit $n$-ball.
+
+The ratio $S_n/V_n$ equals $n$ for the unit ball, so  
+```{math}
+f_n(r)\,dr = n\,r^{\,n-1}\,dr
+\quad\Longrightarrow\quad
+f_n(r)=n\,r^{\,n-1}, \; 0\le r\le1.
+```
+
+The factor $r^{n-1}$ captures how the "room to place points" grows with radius, while the leading $n$ ensures the PDF integrates to 1.
+
+
+:::{math}
+\text{Because }V(r)=V_n r^{n}\text{ for an $n$-ball, } \frac{dV}{dr}=S_n(r)=\frac{d}{dr}\!\bigl(V_n r^{n}\bigr)=nV_n r^{\,n-1};\ \text{evaluating at }r=1\text{ gives }S_n=nV_n,\ \text{so } \dfrac{S_n}{V_n}=n.
+:::
+
+
 That single formula encapsulates the "surface concentration'' effect:
 for large $n$ the density is negligible until $r$ is very close to $1$.
 Indeed, $\mathbb E[R]=\tfrac{n}{n+1}\to 1$ and
 $\operatorname{Var}(R)=\tfrac{1}{(n+1)(n+2)}\to 0$, so almost every point
 lies within an $O\!\bigl(1/\sqrt n\bigr)$ shell of the boundary.
 
+--- 
+
+# Distance Between Two Random Points Concentrates at $\sqrt2$
+
+Goal For independent, uniformly-random points  
+$X,Y\in S^{\,n-1}\subset\mathbb R^{n}$ show  
+
+```{math}
+:label: goal
+\lVert X-Y\rVert \;\xrightarrow{P}\; \sqrt2
+```
+
+as $n\to\infty$.
+
+
+
+## Rewrite the distance via a dot product
+
+Because $\lVert X\rVert=\lVert Y\rVert=1$,
+
+```{math}
+:label: dist-sq
+\lVert X-Y\rVert^{2}=2\bigl(1-X\!\cdot\!Y\bigr).
+```
+
+Thus it suffices to prove $X\!\cdot\!Y\;\xrightarrow{P}\;0$.
+
+
+
+## Model the sphere points with Gaussians
+
+Represent each uniform point as a normalised Gaussian vector:
+
+```{math}
+:label: gaussian-model
+X=\frac{Z}{\lVert Z\rVert},\qquad 
+Y=\frac{W}{\lVert W\rVert},
+```
+
+where $Z_i,\,W_i\stackrel{\text{iid}}{\sim}\mathcal N(0,1)$ and
+$Z\perp W$.
+
+Then
+
+```{math}
+:label: dot-gamma
+X\!\cdot\!Y=\frac{\sum_{i=1}^n Z_i W_i}{\lVert Z\rVert\,\lVert W\rVert}.
+```
+
+
+
+## Asymptotics of the numerator and denominators
+
+* **Numerator**  
+  Set $S_n=\sum_{i=1}^n Z_iW_i$.  Since
+  $\mathbb E[Z_iW_i]=0$ and $\mathrm{Var}(Z_iW_i)=1$,
+
+  ```{math}
+  \frac{S_n}{\sqrt n}\;\Longrightarrow\;\mathcal N(0,1)
+  ```
+  (central-limit theorem).
+
+* **Denominator**  
+  By the law of large numbers  
+
+  ```{math}
+  \lVert Z\rVert^{2}=n\bigl(1+o(1)\bigr),
+  \qquad
+  \lVert W\rVert^{2}=n\bigl(1+o(1)\bigr),
+  ```
+
+  hence
+  $\lVert Z\rVert\,\lVert W\rVert = n\bigl(1+o(1)\bigr)$.
+
+Combine with [](#dot-gamma):
+
+```{math}
+X\!\cdot\!Y=\frac{1}{\sqrt n}\,\mathcal N(0,1)\bigl(1+o(1)\bigr)
+           \;\xrightarrow{P}\;0.
+```
+
+
+
+## 4 Distance convergence
+
+Insert $X\!\cdot\!Y\to 0$ into [](#dist-sq):
+
+```{math}
+\lVert X-Y\rVert^{2}\;\xrightarrow{P}\;2,
+\qquad
+\text{hence}\qquad
+\lVert X-Y\rVert\;\xrightarrow{P}\;\sqrt2,
+```
+
+which establishes the claim in [](#goal).
+
+:::{note}
+A variance estimate shows
+$\lvert \lVert X-Y\rVert-\sqrt2\rvert = O_p\!\bigl(n^{-1/2}\bigr)$, i.e.
+concentration tightens like $1/\sqrt n$.
+:::
+
+
+
+
+
+
 ```{admonition} Why This Matters
 :class: tip
-This is exactly why I wanted to get MyST and LaTeX working - being able to write math like this, with proper equations and proofs, is crucial for sharing these ideas. I do math all the time, but it's usually on a notepad. Now I can actually publish my mathematical journey, with all the rigor and beauty intact.
+This is exactly why I wanted to get MyST and $\LaTeX$ working - being able to write math like this, with proper equations and proofs, is crucial for sharing these ideas. I do math all the time, but it's usually on a notepad. Now I can actually publish my mathematical journey, with all the rigor and beauty intact.
 ```
+
+---
+
+## From Geometry to Robots
+
+All right, brain back in *applied* mode.  The same tooling that renders
+those crisp equations is powering my day-to-day robotics stack, so the
+next section pivots from hollow $n$-balls back to slow and boring coding.
 
 ## What I'm Actually Working On
 
-I'm knee deep in robotics! I spent a good hour or so working on getting maniskill hooked up to lerobot. Didn't end up connecting it to my robot and move the configuration over into the newly cloned repo because it's saturday night and fuck I've just been crunching on my own projects.
+I'm knee deep in robotics! I spent a good hour or so working on getting maniskill hooked up to lerobot. Didn't end up connecting it to my robot and move the configuration over into the newly cloned repo because it's saturday night and I've just been crunching on my website and typesetting projects.
 
 ```{mermaid}
 graph TD
@@ -216,12 +260,30 @@ This is the architecture I'm building - local development with the power of exec
 
 ## The Big Picture
 
-I already live in the power-user endgame—VS Code, GitHub Pages, and an AI co-pilot wired straight into my editor. Spinning up a static site or a LaTeX-heavy blog post is *possible* today; the real pain is in the dozen tiny steps that sit between inspiration and a shareable link. Those paper-cuts don't just slow me down—they keep everyone else from even trying.
+I already live in the power-user endgame—VS Code, GitHub Pages, and an AI co-pilot wired straight into my editor. Spinning up a static site or a $\LaTeX$-heavy blog post is *possible* today; the real pain is in the dozen tiny steps that sit between inspiration and a shareable link. Those paper-cuts don't just slow me down—they keep everyone else from even trying.
 
 So the goal isn't to invent new powers, it's to *compress* the ones we have into a single, low-friction loop that anyone who can type Markdown can ride.
 
 1. **Capture → Journal extension.**  Works right inside whatever editor you love. Jot an idea, tag it, and it's instantly part of the knowledge graph—no copy-pasting, no context switching.
-2. **Refine → *whtwnd* editor.**  One click promotes a note into a full-blown article lab. Live code blocks, MathJax/LaTeX rendering, and a design system that makes even dense proofs look readable.
+2. **Refine → *whtwnd* editor.**  One click promotes a note into a full-blown article lab. Live code blocks, $\LaTeX$ rendering, and a design system that makes even dense proofs look readable.
 3. **Publish → Zero-touch deploy.**  The build spins up locally, ships through a DO jump-box, and lands in GitHub Pages (or your own server) without you touching a terminal. Good-looking, citation-ready pages, every time.
 
 If we can make *that* cycle feel as effortless as pressing ⌘-S, then the subject matter—robotics tutorials, category-theory deep dives, garden-variety blog posts—becomes almost incidental. And when the tooling handles my edge-case chaos, chances are it will feel like magic for everyone else.
+
+
+
+# Okay one bad thing
+
+Now I feel like I have to make every damn post all sparkly and sexy and cool like I give a single solitary fuck. Yeah that's a definite reason to work hard to get whtwnd up and running. You can have posts that aren't visible to the public, though I don't know if that means people can't go see if they're on your PDS lol.
+
+So I am going to use the designs for the base but I think I'm going to modify both the bottom part of the camera post but also the top. Try to get them pointing at the same basic work area for a nice degree of separation and difference in POV. I'm going to turn them like 30 degrees inward even though that might not be enough. It will create more overlapping field of vision in the cameras than having them both stare straight down.
+
+They just seem like a collision obstacle right now, so I'm going to kick them out by extending the STL file somehow. I wish people shared the actual parametric models instead of just the STL meshes. Oh well. I can probably reinvent the part I need just looking at it, which I've already started doing.
+
+---
+
+# Multiple posts in a day, or one big ass journal entry?
+
+I don't know! Certainly seems like I'm doing on big post-a-day, but they can be themed of course. Posts can and definitely should be longer thought out and revisited.
+
+I've got the framework for writing my book on robotics now. I need to do that.
