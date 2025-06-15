@@ -100,6 +100,7 @@ ogp_social_cards = {
 }
 
 ogp_image = "_static/social-banner.png"
+ogp_use_first_image = False
 
 rediraffe_redirects = {
     "rust-governance.md": "blog/2018/rust_governance.md",
