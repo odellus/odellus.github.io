@@ -53,7 +53,7 @@ site:
       url: /about
     - title: Projects
       url: /projects
-    # - title: Books
-    #   url: /books
+    - title: Books
+      url: /books
     - title: Journal
       url: /journal
