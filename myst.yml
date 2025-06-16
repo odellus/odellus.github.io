@@ -20,7 +20,6 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
-    # UNCOMMENT THIS WHEN I HAVE SOMETHING TO SHOW
     - file: books.md
       children:
         - title: Scientific Computing with Python
@@ -28,16 +27,11 @@ project:
             - pattern: books/Scientific-Computing-with-Python/**{.ipynb,.md}
     - file: journal.md
       children:
-        # UNCOMMENT TO TEST DRAFTS
-        # - title: 'drafts'
-        #   children:
-        #     - pattern: journal/drafts/**{.ipynb,.md}
         - title: '2025'
           children:
             - title: June
               children:
                 - pattern: journal/2025/Jun/**{.ipynb,.md}
-
   thumbnail: _static/social-banner.png
 site:
   template: book-theme

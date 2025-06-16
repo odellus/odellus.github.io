@@ -87,24 +87,45 @@ function updateMystYaml(year: string, month: string) {
             journalToc.children.push(yearSection);
         }
 
-        // Get all month directories for this year
-        const yearDir = path.join(workspaceRoot, 'journal', year);
-        if (!fs.existsSync(yearDir)) return;
+        // Ensure children array exists
+        if (!yearSection.children) {
+            yearSection.children = [];
+        }
 
-        const months = fs.readdirSync(yearDir)
-            .filter(dir => fs.statSync(path.join(yearDir, dir)).isDirectory())
-            .sort((a, b) => {
-                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-                return months.indexOf(a) - months.indexOf(b);
-            });
+        // Map short month (directory name) to full month name for display
+        const monthFullMap: Record<string, string> = {
+            Jan: 'January',
+            Feb: 'February',
+            Mar: 'March',
+            Apr: 'April',
+            May: 'May',
+            Jun: 'June',
+            Jul: 'July',
+            Aug: 'August',
+            Sep: 'September',
+            Oct: 'October',
+            Nov: 'November',
+            Dec: 'December'
+        };
+        const monthDisplay = monthFullMap[month as keyof typeof monthFullMap] || month;
 
-        // Update the TOC to match the directory structure
-        yearSection.children = months.map(monthDir => ({
-            title: monthDir,
+        // If the current month already exists in the TOC, no update is necessary
+        const monthExists = yearSection.children.some((child: any) => child.title === monthDisplay);
+        if (monthExists) {
+            return; // Nothing to do
+        }
+
+        // Add the new month entry with full month name as the title
+        yearSection.children.push({
+            title: monthDisplay,
             children: [{
-                pattern: `journal/${year}/${monthDir}/**{.ipynb,.md}`
+                pattern: `journal/${year}/${month}/**{.ipynb,.md}`
             }]
-        }));
+        });
+
+        // Optional: keep the months sorted chronologically for neatness
+        const monthOrder = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        yearSection.children.sort((a: any, b: any) => monthOrder.indexOf(a.title) - monthOrder.indexOf(b.title));
 
         // Write back the updated config
         fs.writeFileSync(mystYamlPath, yaml.dump(mystConfig));

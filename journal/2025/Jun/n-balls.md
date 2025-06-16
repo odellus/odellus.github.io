@@ -1,6 +1,6 @@
 ---
 date: "2025-06-15"
-title: "Daily Journal - 15 Jun 2025"
+title: "N-balls in high dimensions"
 ---
 
 
