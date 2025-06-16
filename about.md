@@ -18,9 +18,9 @@ Leading cross-functional research, rapid prototyping of AI agents/APIs, and sett
 :class: col-body-inset-left
 
 :::::{card}
-**2025** Phytomech Robotics & Farm
+**2023** Phytomech Buys the Farm
 ^^^
-Bootstrapped a research farm to test and deploy our Phytomech robots—starting with general-purpose pick-and-place and now moving toward crop-specific harvesting and planting systems.
+We moved onto our 20 acre hobby farm in Live Oak, Florida. So much room for activies!
 :::::
 
 :::::::
@@ -65,8 +65,7 @@ Focused on text categorization and sentiment analysis with AzureML, plus extensi
 **2013** Founded WG-APL ➜ Phytomech Industries
 ^^^
 - Started as a one-man data-science consulting outfit.  
-- Evolved into Phytomech Industries—an agricultural-robotics company I now run as CTO.  
-- Built the first prototypes of autonomous pick-and-place field robots.
+- Evolved into Phytomech Industries—an agricultural-robotics company
 :::::
 
 :::::::

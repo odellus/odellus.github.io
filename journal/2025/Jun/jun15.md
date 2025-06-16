@@ -3,20 +3,23 @@ date: "2025-06-15"
 title: "Daily Journal - 15 Jun 2025"
 ---
 
-```{note}
-This is me thinking out loud, building in public, and showing the sausage being made. No editing, no polish - just raw thoughts and code.
-```
 
-## The Real Problem
+# The Real Problem
 
-The problem isn't that we lack ideas or eloquence - it's that our thoughts are fragmented across platforms and protocols. I can write extensively about software development in conversations with AI, but translating that into long-form content feels like an insurmountable task. This isn't about creating another AI writing tool to automate college essay slop generation. It's about building a system that helps organize our scattered knowledge into coherent structures, whether that's a tweet, a blog post, or a book. The goal is to help people maintain consistency, identify patterns in their thinking, and build on their ideas without losing the human element. Because the truth is, most of us are more capable than we realize - we just need help organizing our thoughts into something meaningful.
+The problem isn't that we lack ideas or eloquence - it's that our thoughts are fragmented across platforms and protocols. I can write extensively about software development in conversations with AI, but translating that into long-form content feels like an insurmountable task. 
 
-```{admonition} The Vision
-:class: important
+So I want to do something to help with this. Solve your own problem and you'll end up solving a problem a lot of people face, because...
+> nobody's that special.
+
+So great, I'm looking to create Yet Another AI Writing Tool and I'm dressing it up like "oh I'm just trying to stick MyST markdown in the preview of whtwnd and also enable it across my fork." Yeah that's just the pretense to cramming another AI assistant down everyone's throats. I feel like there's a better way to interface with your assistant than just through chat. It should be listening to what you write and doing tasks in the background that can help with your project and interests and goals. A full assistant, but through your journal.
+
+So this isn't about creating another AI writing tool to automate college essay slop generation. It's about building a system that helps organize our scattered knowledge into coherent structures, whether that's a tweet, a blog post, or a book. The goal is to help people maintain consistency, identify patterns in their thinking, and build on their ideas without losing the human element. Because the truth is, most of us are more capable than we realize - we just need help organizing our thoughts into something meaningful.
+
+```{important} The Vision
 I launched a new site this weekend. I really liked the old one, but this is more than just a sexy CV site. Though tbh part of what I want to do when I do get the wntwnd clone working is put together better myst themes for sites than just book and article. MyST and jupyter book 2 are more tailored towards PDFs because it's mostly academic fucks who are using it so they can write markdown everywhere they don't need latex because that makes a hell of a lot of sense.
 ```
 
-## Today's Mathematical Journey
+# Today's Mathematical Journey
 
 I've been thinking a lot about high-dimensional spaces lately. It's one of those topics that keeps coming up in different contexts - from machine learning to quantum mechanics. The weird thing about high dimensions is how they completely break our 3D intuition. Let me walk through a proof that blew my mind when I first saw it.
 
@@ -182,7 +185,7 @@ X\!\cdot\!Y=\frac{1}{\sqrt n}\,\mathcal N(0,1)\bigl(1+o(1)\bigr)
 
 
 
-## 4 Distance convergence
+## Distance convergence
 
 Insert $X\!\cdot\!Y\to 0$ into [](#dist-sq):
 
@@ -204,22 +207,21 @@ concentration tightens like $1/\sqrt n$.
 
 
 
+---
 
-
-```{admonition} Why This Matters
-:class: tip
+```{tip} Why This Matters
 This is exactly why I wanted to get MyST and $\LaTeX$ working - being able to write math like this, with proper equations and proofs, is crucial for sharing these ideas. I do math all the time, but it's usually on a notepad. Now I can actually publish my mathematical journey, with all the rigor and beauty intact.
 ```
 
 ---
 
-## From Geometry to Robots
+# From Geometry to Robots
 
 All right, brain back in *applied* mode.  The same tooling that renders
 those crisp equations is powering my day-to-day robotics stack, so the
 next section pivots from hollow $n$-balls back to slow and boring coding.
 
-## What I'm Actually Working On
+# What I'm Actually Working On
 
 I'm knee deep in robotics! I spent a good hour or so working on getting maniskill hooked up to lerobot. Didn't end up connecting it to my robot and move the configuration over into the newly cloned repo because it's saturday night and I've just been crunching on my website and typesetting projects.
 
@@ -258,7 +260,7 @@ graph TD
 This is the architecture I'm building - local development with the power of executable books, a DO droplet as a jumpbox, and self-hosted services at home. No unnecessary cloud dependencies, just pure control over your infrastructure.
 ```
 
-## The Big Picture
+# The Big Picture
 
 I already live in the power-user endgame—VS Code, GitHub Pages, and an AI co-pilot wired straight into my editor. Spinning up a static site or a $\LaTeX$-heavy blog post is *possible* today; the real pain is in the dozen tiny steps that sit between inspiration and a shareable link. Those paper-cuts don't just slow me down—they keep everyone else from even trying.
 

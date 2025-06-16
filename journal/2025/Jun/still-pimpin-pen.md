@@ -1,3 +1,14 @@
+---
+title: Still pimpin' pen
+date: "2025-06-15"
+---
+
+My daily journal has already grown to be too unwieldy after focusing on it for a day! I guess I finally have something to say.
+
+It's sort of blowing my mind that I'm technically going to be publishing my book as I write it but that's sort of the whole point of having my own journal/book site.
+
+Okay I commented out that part of my `myst.yml`.
+```yaml
 version: 1
 project:
   id: 91143d4d-0120-4764-9c1d-b16de83a4b9c
@@ -20,18 +31,13 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
-    # UNCOMMENT THIS WHEN I HAVE SOMETHING TO SHOW
-    - file: books.md
-      children:
-        - title: Scientific Computing with Python
-          children:
-            - pattern: books/Scientific-Computing-with-Python/**{.ipynb,.md}
+    # - file: books.md
+    #   children:
+    #     - title: Scientific Computing with Python
+    #       children:
+    #         - pattern: books/Scientific-Computing-with-Python/**{.ipynb,.md}
     - file: journal.md
       children:
-        # UNCOMMENT TO TEST DRAFTS
-        # - title: 'drafts'
-        #   children:
-        #     - pattern: journal/drafts/**{.ipynb,.md}
         - title: '2025'
           children:
             - title: June
@@ -57,3 +63,8 @@ site:
     #   url: /books
     - title: Journal
       url: /journal
+```
+
+unlike with journal posts, I don't want to necessarily share this automatically.
+
+I can also add the drafts in journal/drafts to this 

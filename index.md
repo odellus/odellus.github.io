@@ -27,9 +27,13 @@ I'm super cool. You should follow me on [at-proto](https://deer.social/profile/d
 :link: about.md
 About me ℹ️
 :::
-:::{grid-item-card}
+<!-- :::{grid-item-card}
 :link: projects.md
 Projects I've worked on 🔧
+::: -->
+:::{grid-item-card}
+:link: books.md
+Books I'm working on 📚
 :::
 :::{grid-item-card}
 :link: journal.md
