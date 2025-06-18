@@ -44,7 +44,7 @@ project:
               children:
                 - pattern: journal/2025/Jun/**{.ipynb,.md}
 
-  thumbnail: _static/social-banner.png
+  thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
   options:
