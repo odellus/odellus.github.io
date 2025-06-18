@@ -80,7 +80,7 @@ html_theme_options = {
 
 html_favicon = "_static/profile-circle.png"
 html_title = "Thomas Wood"
-html_static_path = ["_static"]
+html_static_path = ["_static", "images"]
 html_extra_path = ["feed.xml"]
 html_sidebars = {
     "index": ["hello.html"],

@@ -20,6 +20,9 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
+    - file: articles.md
+      children:
+        - pattern: articles/**.md
     - file: books.md
       children:
         - title: Scientific Computing with Python
@@ -47,6 +50,8 @@ site:
       url: /about
     - title: Projects
       url: /projects
+    - title: Articles
+      url: /articles
     - title: Books
       url: /books
     - title: Journal
