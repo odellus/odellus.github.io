@@ -6,7 +6,7 @@ title: "Marxism-Veblenism"
 # Marxism-Veblenism
 
 
-![]()
+
 :::{figure} ./images/marx-veblen.jpg
 They're astonished by my doctrine
 :::

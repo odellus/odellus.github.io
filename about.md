@@ -64,8 +64,8 @@ Focused on text categorization and sentiment analysis with AzureML, plus extensi
 :::::{card}
 **2013** Founded WG-APL ➜ Phytomech Industries
 ^^^
-- Started as a one-man data-science consulting outfit.  
-- Evolved into Phytomech Industries—an agricultural-robotics company
+- Started as a one man band consulting outfit 
+- Evolved into Phytomech Industries—an agricultural robotics company
 :::::
 
 :::::::
@@ -87,7 +87,33 @@ Studied applied mathematics while doing protein-structure prediction for synthet
 :::::{card}
 **2007** B.S. in Physics, Lamar University
 ^^^
-Graduated with honors and began my journey into data and computer science.
+:::{mermaid}
+graph TD;
+  %% Main major changes
+  A["Premed Biology Major"] -->|"Took Organic Chemistry"| B["Chemistry Major"];
+  B -->|"Calculus for Engineers (fell in love)"| C["Mathematics Major"];
+
+  %% Parallel physics track
+  A -->|"Physics I"| P1["Physics Track Begins"];
+  P1 --> P2["Modern Physics, Quantum Mechanics"];
+  P2 --> P3["Advanced/Upper-Level Physics </br> (Optics, Quantum Field Theory)"];
+
+  %% Cross-links showing concurrent enrollment
+  B --> P2;
+  C --> P3;
+
+  %% Final degree decision
+  P3 -->|"Last-minute major change"| F["BS Physics"];
+
+  %% Near-complete degrees
+  A --> BioNear["Biology Degree (few classes left)"];
+  B --> ChemNear["Chemistry Degree (P-Chem II & Quant left)"];
+  C --> MathNear["Mathematics Degree (Abstract Algebra & Topology left)"];
+  
+  %% Styling
+  classDef partial stroke-dasharray: 5 5;
+  class BioNear,ChemNear,MathNear partial;
+:::
 :::::
 
 :::::::

@@ -1,25 +1,20 @@
 # Articles
 
-This page describes some of the major projects that I have worked on over the past and present.
+Less sequential pieces from me than you'll find in [Journal](./journal)
 
-## Current projects
+## Political Economics
 
 ````{div}
 :class: col-gutter-left align-middle
-```{image} ./images/Brain.png
+```{image} ./articles/images/marx-veblen.jpg
 :alt: Taking over the world y'all
-:width: 70%
 ```
 ````
 ````{div}
 :class: col-body-right
 
-**Marxism-Veblenism**
+[**Marxism-Veblenism**](/articles/marxism-veblenism)
 
 Quck rundown of the immortal science
 ````
 
-
-## Past projects
-
-NOTHING IS EVER PAST!!!
