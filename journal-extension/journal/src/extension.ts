@@ -40,13 +40,13 @@ function createJournalEntry() {
     }
     
     // Create the file with the new naming convention: month+day.md
-    const fileName = `${monthShort}${day}.md`;
+    const fileName = `${monthShort}${day.toString().padStart(2, '0')}.md`;
     const filePath = path.join(monthDir, fileName);
     
     // Create the file content
     const content = `---
 date: "${year}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}"
-title: "Daily Journal - ${day} ${monthCapitalized} ${year}"
+title: "${day} ${monthCapitalized} ${year}"
 ---
 `;
     
