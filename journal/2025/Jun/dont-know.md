@@ -31,7 +31,7 @@ I mean I don't really need nox or doc-utils or sphinx or any of that. `myst star
 ---
 ## FreeCAD STL -> STEP Part pipeline
 
-So I spent the longest trying to figure out how to split a part, and the key is to create a plane from Primitive Graphic in the part workbench and place it so it intersects where you want the cut. Then you select both and do Split -> Slice Apart.
+So I spent the longest trying to figure out how to split [a part][overhead-camera], and the key is to create a plane from Primitive Graphic in the part workbench and place it so it intersects where you want the cut. Then you select both and do Split -> Slice Apart.
 
 I'm trying to figure out how I can extrude from one of these surfaces right now. I want to extend the split part back to join the original, at which point I will do a boolean union to get back the camera mount inverted T with a longer base. I'm not happy with how close the camera mount rests to the arm. It seems like an obstacle.
 
@@ -77,7 +77,41 @@ Alright what did we do yesterday and today? Quick pulse check
 :icon: false
 - calibrated so100 using new lerobot environment
 - designed new camera base for so100 dataset collection and control by hand with FreeCAD
+- realized I should rotate just the top of the tower along corner of part so I still have flat surface to print
 :::
 
-[smol-vla]: https://arxiv.org/abs/2506.01844
+05:11
+---
 
+:::{figure} ../images/freecad-cam-mount-tops-rotated.png
+:label: new-mount-top
+Now we're cooking with induction
+:::
+
+Base doesn't have the twist. We do that at the top now as you can see.
+
+
+This is the base.
+
+:::{figure} ../images/freecad-cam-mount-bottom-offset.png
+:label: offset-bottom
+Base has offset to avoid collisions
+:::
+
+
+Here's the official via [TheRobotStudio][overhead-camera]
+
+:::{figure} ../images/overhead_cam_one_follower.png
+:label: official-overhead-cam
+The official looks straight ahead and is all up in follower's beeswax
+:::
+We wanted to give the robot a little breathing room and also point the overhead cameras toward the center of the workspace so there is more overlap in their fields of vision.
+
+:::{figure} ../images/default-stand-vs-our-design.jpg
+:label: hand-drawn-design
+You've already seen the parts so this should be simple to imagine put together
+:::
+
+
+[smol-vla]: https://arxiv.org/abs/2506.01844
+[overhead-camera]: https://github.com/TheRobotStudio/SO-ARM100/blob/main/Optional/Overhead_Cam_Mount_32x32_UVC_Module/README.md
