@@ -15,7 +15,7 @@ They're astonished by my doctrine
 :class: col-body-inset-right
 
 :::::{important}
-**Marx's drive**  
+### Marx's drive
 - Capital must keep expanding productive capacity because competition punishes any firm that stands still.  
 - That expansion inevitably presses prices and profit rates downward unless demand (and wages) rise just as fast—which they rarely do.  
 - Left on its own, the system tips into gluts, layoffs, and crisis.
@@ -27,10 +27,10 @@ They're astonished by my doctrine
 :class: col-body-inset-left
 
 :::::{tip}
-**Veblen's brake**  
+### Veblen's brake
 - Owners do not wait for prices to collapse; they pre-empt the glut.  
 - They idle machines, stage "strategic" shortages, buy patents to shelve them, lobby for longer copyrights, wrap code in licences—anything that re-creates scarcity before abundance reaches the market.  
-- Veblen calls this deliberate throttling of technical potential "sabotage."
+- Veblen calls this deliberate throttling of technical potential [**sabotage**][veblen].
 :::::
 
 :::::::
@@ -39,20 +39,39 @@ They're astonished by my doctrine
 :class: col-body-inset-right
 
 :::::{hint}
-**How the two logics interlock**  
+### How the two logics interlock  
 - Expansion and sabotage are not rival explanations; they are sequential moves in the same game.  
   - When profits look safe, investment surges and capacity races ahead of demand.  
   - When that new capacity threatens to cheapen output too much, the owners pivot to sabotage to keep margins intact.  
 - Crisis, therefore, is no longer a sudden glut; it is a chronic condition in which artificially scarce digital goods and services sit next to surplus productive power that could deliver them for pennies.
+
 :::::
 
 :::::::
 
+---
+
+:::::{tip} Diagram
+:::{mermaid}
+graph LR;
+  P["Safe profits"] --> I["Investment surges"];
+  I --> C["Capacity races ahead of demand"];
+  C --> L["Price & profit squeeze"];
+  L --> S["Sabotage (idle capacity, delay tech, restrict output)"];
+  S --> M["Margins restored via scarcity"];
+  M --> P; %% feedback: renewed sense of safe profits triggers next cycle
+  S -.-> U["Under-utilised capacity"];
+  U -.-> C; %% chronic slack feeds back into capacity
+:::
+:::::
+
+---
+
 :::::::{div}
-:class: col-body-inset-left
+:class: col-body-inset-right
 
 :::::{warning}
-**Why this matters in the digital economy**  
+### Why this matters in the digital economy
 - Software, data, and culture can be copied at near-zero cost, so the temptation to share is constant.  
 - The countermeasure is ever-thicker walls: Digital Rights Management, subscription gates, cloud‐only access, patent pools, NDAs.  
 - Profit flows less from making things than from policing the boundary between those who may and may not copy.
@@ -61,7 +80,7 @@ They're astonished by my doctrine
 :::::::
 
 :::::::{div}
-:class: col-body-inset-right
+:class: col-body-inset-left
 
 :::::{danger}
 **The distributional upshot**  
@@ -73,7 +92,7 @@ They're astonished by my doctrine
 :::::::
 
 :::::::{div}
-:class: col-body-inset-left
+:class: col-body-inset-right
 
 :::::{tip}
 **What drops out when you see both halves together**  
@@ -85,10 +104,12 @@ They're astonished by my doctrine
 :::::::
 
 :::::::{div}
-:class: col-body-inset-right
+:class: col-body-inset-left
 
 :::::{important}
 Read Marx if you want to understand why capacity keeps overshooting; read Veblen to see why it almost never reaches us. Put them together and the pattern of today's rent-heavy, IP-fortified capitalism snaps into focus.
 :::::
 
 :::::::
+
+[veblen]: https://en.wikipedia.org/wiki/Thorstein_Veblen
