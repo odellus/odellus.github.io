@@ -1,6 +1,6 @@
 ---
 date: "2025-06-25"
-title: "I don't know."
+title: "I don't know"
 subtitle: "That's not my job"
 ---
 
@@ -66,7 +66,18 @@ Camera mount is now rotated 45 degrees and extended to avoid collision and give 
 
 ## Design the damn tower rack man!
 
-Now I need to bring this same energy to designing a rack to hold towers and their return gutter out of plywood, 2x4s, and 
+Now I need to bring this same energy to designing a rack to hold towers and their return gutter out of plywood and 2x4s.
+
+
+## Okay but this is cool
+
+Alright what did we do yesterday and today? Quick pulse check
+
+:::{tip}📌 Pulse check
+:icon: false
+- calibrated so100 using new lerobot environment
+- designed new camera base for so100 dataset collection and control by hand with FreeCAD
+:::
 
 [smol-vla]: https://arxiv.org/abs/2506.01844
 
