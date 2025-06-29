@@ -6,7 +6,7 @@ subtitle: "And we update the grow tower design"
 
 # Camera mounts
 
-So I'm printing the parts I've been modifying this week. First up is the top piece of the camera mount. I guess I'm printing out both camera mounts separately or something. I mean I know I want to use two cameras so the order isn't really that important.
+So I'm printing the parts I've been modifying this week. First up is the top piece of the [camera mount][overhead-camera]. I guess I'm printing out both camera mounts separately or something. I mean I know I want to use two cameras so the order isn't really that important.
 
 
 First print turned out garbage but luckily I caught it in a reasonable amount of time that I didn't waste too much filament. 
@@ -46,3 +46,4 @@ Next up is designing the rack and the gutter for returning the water to the rese
 
 
 [grow-tower]: https://github.com/OSRLab/vertical_grow_tower
+[overhead-camera]: https://github.com/TheRobotStudio/SO-ARM100/blob/main/Optional/Overhead_Cam_Mount_Webcam/README.md
