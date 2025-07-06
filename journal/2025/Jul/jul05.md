@@ -88,6 +88,18 @@ I mean I want to design generic agents to help with planning and be an all aroun
 
 Perfect sandbox for an AI to learn.
 
+# AI4Research
+
+So it looks like someone put together a survey of all of the AI for research papers out there. There are plenty of approaches to automating the aquisition of knowledge. I should spend some time reading these and experimenting with the different approaches.
+
+I want a Deep Research I can run locally against a model I can host on a couple of [Ascent GX10s][ascent-gx10] that sits there and writes code to run experiments, evaluate the results, and refine its approach under the supervision of agents whose goal is more of an asshole PI filter that I will take on periodically as it brings important results to my attention. Results I direct the agent towards and independent discoveries it ranks as germane enough to warrant annotation.
+
+I am going to create a data flywheel on my local system.
+
+I forgot to mention the whole slurm cluster thing. I've got slurm installed on my three laptops and home, two of which have GPUs. Now I know the GX10s won't be connected through slurm necessarily but they actually might I don't know. I haven't spent the time to get it working past the hello world version of running slurm on the remote machine.
+
+I then got into the deep end of wanting to create my own whtwnd fork that uses jupyter book/mystmd for rending executable books to make it easier for people to publish clean websites and enhance their literacy through advancements in typesetting. I really do believe in it. I think it was time well spent even if I haven't really used it since I gave up and started using `uv run nox` with sphinx and doc-utils. It's a hack. I'm going to get back into the codemirror myst editor preview before I know it and I'll have my pds at pds.advanced-eschatonics instead of right at the site and when you go there (not pds, www or whatever) you'll see a slick video landing page like I'm trying to take all of your money and I don't even feel bad about it. 
+
 
 [trae-agent]: https://github.com/bytedance/trae-agent/tree/main
 [continue]: https://github.com/continuedev/continue
@@ -95,3 +107,4 @@ Perfect sandbox for an AI to learn.
 [ascent-gx10]: https://www.asus.com/event/asus-ascent-gx10/
 [friction]: https://www.clausewitz.com/readings/Warfit1.htm
 [sim2real-camera]: https://github.com/StoneT2000/lerobot-sim2real/blob/main/env_config.json
+[ai4research]: https://ai-4-research.github.io/
