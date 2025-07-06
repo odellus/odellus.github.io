@@ -100,6 +100,8 @@ I forgot to mention the whole slurm cluster thing. I've got slurm installed on m
 
 I then got into the deep end of wanting to create my own whtwnd fork that uses jupyter book/mystmd for rending executable books to make it easier for people to publish clean websites and enhance their literacy through advancements in typesetting. I really do believe in it. I think it was time well spent even if I haven't really used it since I gave up and started using `uv run nox` with sphinx and doc-utils. It's a hack. I'm going to get back into the codemirror myst editor preview before I know it and I'll have my pds at pds.advanced-eschatonics instead of right at the site and when you go there (not pds, www or whatever) you'll see a slick video landing page like I'm trying to take all of your money and I don't even feel bad about it. 
 
+Sim2Real is a super cool way to make neat graphics too! 
+
 
 [trae-agent]: https://github.com/bytedance/trae-agent/tree/main
 [continue]: https://github.com/continuedev/continue
