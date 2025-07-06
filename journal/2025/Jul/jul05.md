@@ -24,6 +24,11 @@ So my cameras finally showed up and I started going through the process of getti
 
 Also there's a better damn way to do this with surface geometries and whatnot from the real robot to the simulated version rather than doing it by hand. Driving me bananas. Spent all night working on just aligning a fucking camera position and target and it's still not working. Cannot get them aligned by hand. I mean wow. I should probably just start with very basic top down probably because the geometry of moving the camera position while keeping the target stationary makes for some complicated tuning when I just need to put this all in the URDF and know the camera positon deterministically. I can model the webcam as a cylinder. It'll be fine. Then I just tune the view/orientation instead of the position, which should be easier.
 
+:::{figure} ../images/alignment-problem.png
+:label: misaligned-robot
+A robot out of alignment with its digital twin
+:::
+
 
 I kind of do want to use computer vision to calculate the normals on the real robot and use those to align the camera position tbh.
 
@@ -31,6 +36,23 @@ I kind of do want to use computer vision to calculate the normals on the real ro
 
 But yeah this is two days of not doing work stuff 10 hours a day. We shipped a new on demand feature this week and it was a lot of work. Tons of moving parts. Pretty tired honestly and what do I start doing? Coding and robotics.
 
+
+Looking at this image in my journal it's making me think of Clausewitz and [Friction][friction], which is of course in this context defined as
+> "the force that makes the apparently easy so difficult."
+
+I just want to take the damn images and move them transversely. Free the viewpoint to move too that's fine we're in fucking tuning Floyd Rose tremolo territory here. Ugh I wish it were actually a damn quaternion instead of some fucking position it's staring at. 
+
+Okay maybe I need to do a post on quaternion math so I can move the point along with the position. Define an orientation and then I can just translate the camera where I need it to be. That's the problem. Need to work on that and put it in latex after putting it into code.
+
+:::{tip} Change the target in an intelligent way
+Write functions to 
+- calculate the quaterion that represents the orientation of the camera give its current target and position
+- Given a camera position vector and quaternion representing its orientation, compute the target value of the camera
+:::
+This will allow simple transverse motion when modifying the coordinates in the geometry represented in [`env_config.json`][sim2real-camera].
+
+
+I do want to get into doing this with a 3D computer vision based approach that doesn't require manual fine tuning of the camera alignment.
 
 # Value in DIY
 
@@ -71,3 +93,5 @@ Perfect sandbox for an AI to learn.
 [continue]: https://github.com/continuedev/continue
 [arize-phoenix]: https://github.com/Arize-ai/phoenix
 [ascent-gx10]: https://www.asus.com/event/asus-ascent-gx10/
+[friction]: https://www.clausewitz.com/readings/Warfit1.htm
+[sim2real-camera]: https://github.com/StoneT2000/lerobot-sim2real/blob/main/env_config.json
