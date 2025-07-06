@@ -1,0 +1,73 @@
+---
+date: "2025-07-05"
+title: "Qwen3 and trae-agent"
+---
+
+# `trae-agent`
+
+So cursor apparently realized now that Cody is dead they're the king of the mountain and the features they currently offer for \$20 a month are now going to retail for \$200/month. So I've been setting up [continue][continue] with huggingface providers because Qwen3-235B-A22B is a damn good model for only \$0.22 per 1M input tokens and \$0.88 per 1M output tokens.
+
+I mean it too. Tool calling is just as good as the proprietary frontier models. Deepseek-R1-05-28 is \$3 per 1M input and \$8 per 1M output tokens and it's only a _slightly_ stronger model.
+
+
+
+So now I'm using continue with my huggingface router at home and there are problems with the agentic features so I'm like okay no worries. I see [`trae-agent`][trae-agent] with claude 4 (probably opus) is now at 75% on swe-bench-hard and at the top of the leaderboard so I'm like okay let's see what's going on with `trae-agent`.
+
+I wire it up and it's using the Response API from openai, so I am like damn huggingface providers only supports chat completion API so I decide to hell with it I'll just set up an account on fireworks. I see in their docs they do support Response API, but then I get into it and they only support github mcp servers as tools currently.
+
+So I start refactoring trae-agent's openai-client to use the standard openai chat completions and it's taking me forever to figure this out but eventually after instrumenting up trae agent with [arize phoenix][arize-phoenix] I figured out how to get it to use the tools available to trae-agent. I'm still debugging the way it adds the responses to the tool calling to the messages history but I quit at around 16:00 today because it's Saturday and I was like screw it. I'll get to it later.
+
+
+# lerobot-sim2real
+
+So my cameras finally showed up and I started going through the process of getting the camera calibrated for sim2real and it is a **HUGE** pain in the ass. Where the camera sits and points makes it very difficult to calibrate due to its proximity to the robot. I got so frustrated I decided to just start modeling the entire base + camera mounts I have STL files in Sapien so I don't have to fiddle with alignment. I mean I have a digital twin of every part of this.
+
+Also there's a better damn way to do this with surface geometries and whatnot from the real robot to the simulated version rather than doing it by hand. Driving me bananas. Spent all night working on just aligning a fucking camera position and target and it's still not working. Cannot get them aligned by hand. I mean wow. I should probably just start with very basic top down probably because the geometry of moving the camera position while keeping the target stationary makes for some complicated tuning when I just need to put this all in the URDF and know the camera positon deterministically. I can model the webcam as a cylinder. It'll be fine. Then I just tune the view/orientation instead of the position, which should be easier.
+
+
+I kind of do want to use computer vision to calculate the normals on the real robot and use those to align the camera position tbh.
+
+
+
+But yeah this is two days of not doing work stuff 10 hours a day. We shipped a new on demand feature this week and it was a lot of work. Tons of moving parts. Pretty tired honestly and what do I start doing? Coding and robotics.
+
+
+# Value in DIY
+
+I firmly believe in the value of creating tools for yourself. I also firmly believe in reusing what's out there and has been shown to work instead of reinventing the wheel just to feel like you did something. I didn't really want to work on a coding agent this weekend, but it was just released and cursor is rent seeking now that sourcegraph has given up the fight in favor of the per API call billing model. And now I'm paying per API call. My qwen3:latest through ollama is great, but I really do need more capable models for coding agents so I can be as productive as possible.
+
+
+I just see the price of these solidworks licenses and now cursor basically wants $2400/year for the level of use I've been putting into it and yeah. I'm hacking on [`trae-agent`][trae-agent] because it's not like I don't think I'll be able to afford \$200 a month for a tool that lets me fly at work, but because there are knock-on effects for doing things yourself.
+
+I didn't want to get sucked into the pay per API call model but the free VC money API calls dried up with the competition to cursor.
+
+I'd rather just pay for one of the [Spark DGX clones from Asus][ascent-gx10] when they come out. Supposed to be this month?
+
+
+# Projects
+
+Okay I **really** need to set up a projects directory to go along with the page. [I've mentioned this before](../jun/jun21) and I gave a nice little mermaid diagram to illustrate the projects.
+
+Hell my front page is basically a redunant projects page. I need to fix that.
+
+
+## PROJECTS
+- sim2real
+- hydroponics
+- coding agent
+- book
+
+
+I was content with cody. I mean no I wasn't. The only project on my projects page is Humberto, which I haven't worked on in months and is pretty much just connecting MCP and Qwen3 to ollama and a zany system prompt.
+
+I do believe that code is the way for agents to do things. Setting up all of the nodes and Send and Command/interrupt stuff in langgraph is cool and it is good at determining workflows on a rail, but more open ended agents don't need it. They just need to be able to run code. Which is why [`trae-agent`][trae-agent] is only 4 tools inside a trenchcoat, one of them being `bash` hahaha.
+
+I mean I want to design generic agents to help with planning and be an all around assistant, but the first thing I've been tasking my assistant to do is code, so probably should stay with that theme. Let the other stuff drop out of the code. Math, chemistry, biology, physics, engineering. Let it fall out of the code.
+
+Perfect sandbox for an AI to learn.
+
+
+[trae-agent]: https://github.com/bytedance/trae-agent/tree/main
+[continue]: https://github.com/continuedev/continue
+[arize-phoenix]: https://github.com/Arize-ai/phoenix
+[ascent-gx10]: https://www.asus.com/event/asus-ascent-gx10/
