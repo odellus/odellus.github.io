@@ -66,6 +66,17 @@ Any transformation of the coordinates $\bold{p}_{camera}$ and $\bold{p}_{target}
 
 Cannot begin to describe how happy this makes me honestly. This is the future of artificial intelligence. Real2Sim2Real and back again. So I have got to spend a lot more time with maniskill and photogrammetry in general. Need a way to turn videos into URDFs.
 
+Right now I'm training on my gpu laptop. I keep forgetting to talk about slurm. I *really* need to work on distributed inference for robotics. Two GPU laptops! I'm basically gpu middle class but I've got to slurm it so yeah lower middle class hahaha.
+
+Here's the training run in wandb, which I do not really use because I like tracking my own damn metrics but whatever. Need an open source wandb. Is wandb open source? Can you run your own wandb server and issue tokens and whatnot? Well fuck me I guess [you can][wandb-server]. Okay I need to add it to my growing list of things I should put in a bunch of k8s namespaces on my slurm controller.
+
+I mean I talk about infrastructure on my landing page. I think it's really important.
+
+:::{figure} ../images/so100grasp-wandb-run.png
+A bunch of metric of our training showing we're learning to pick up a cube in virtual reality
+:::
+
 
 [sim2real]: https://github.com/StoneT2000/lerobot-sim2real
 [env-config]: https://gist.github.com/odellus/74c10ca972cb70cc133de402466d2878
+[wandb-server]: https://github.com/wandb/server
