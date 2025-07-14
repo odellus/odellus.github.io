@@ -68,13 +68,19 @@ Cannot begin to describe how happy this makes me honestly. This is the future of
 
 Right now I'm training on my gpu laptop. I keep forgetting to talk about slurm. I *really* need to work on distributed inference for robotics. Two GPU laptops! I'm basically gpu middle class but I've got to slurm it so yeah lower middle class hahaha.
 
-Here's the training run in wandb, which I do not really use because I like tracking my own damn metrics but whatever. Need an open source wandb. Is wandb open source? Can you run your own wandb server and issue tokens and whatnot? Well fuck me I guess [you can][wandb-server]. Okay I need to add it to my growing list of things I should put in a bunch of k8s namespaces on my slurm controller.
+Here's the training run in wandb, which I do not really use because I like tracking my own damn metrics but whatever. Need an open source wandb. Is wandb open source? Can you run your own wandb server and issue tokens and whatnot? Well fuck me I guess [you can][wandb-server]. Okay I need to add it to my growing list of things I should put in a bunch of k8s namespaces on my slurm controller. I want to leave the compute intensive nodes for GPU inference and training and run shit like postgres, searxng, wandb (apparently), neo4j, openwebui, deer-flow, some web version of trae-agent, web based climate control and monitoring programs for the automated farm/lab and hell if I know what else eventually. I'm basically a corporation. Fucking odoo. ERPNext. That's what I need an AI for. Project management *shudders*.
 
 I mean I talk about infrastructure on my landing page. I think it's really important.
 
 :::{figure} ../images/so100grasp-wandb-run.png
 A bunch of metric of our training showing we're learning to pick up a cube in virtual reality
 :::
+
+
+# Infrastructure
+
+So I'm waiting for the PLA spools I ordered to get here before I start printing again. I bought some cheaper spools. 
+
 
 
 [sim2real]: https://github.com/StoneT2000/lerobot-sim2real
