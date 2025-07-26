@@ -43,6 +43,10 @@ Trying to figure out how to scale meshes in FreeCAD is kind of a pain honestly.
 
 I haven't printed a single tower or even really thought of the planting towers. I really just need to build a damn scaffold out of 2X4s.
 
+:::{figure} ../images/tower-rack-design.png
+Build it out of 2x4 sticks and screws
+:::
+
 # Infrastructure
 
 `coast-after-1` had been on the fritz. Nvidia drivers completely in revolt. I feel like I've purged them multiple times by now but nothing helps. For some reason I'm acting like updating all of the laptops (three of them) is a huge pain in the ass. For the amount of time I've spent crying and trying to fix the drivers I could have 24.04 installed on all three with slurm configured and running sglang distributed by now.
