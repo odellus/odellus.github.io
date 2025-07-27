@@ -1,10 +1,11 @@
 ---
 date: "2025-07-27"
-title: "Digital Frankenstein"
+title: "Digital Lazarus"
 ---
 
+# Resurrection
 
-Here are the steps I finally figured out for getting my account's service endpoint changed from advanced-eschatonics.com to pds.advanced-eschatonics.com. I was inspired by whtwnd and how they use my pds to log me in. I also am the head of AI Rearch and Developmoent at a startup and a lot of what I do is getting software running at app-name.startup.com. 
+Here are the steps I finally figured out for getting my account's service endpoint changed from advanced-eschatonics.com to pds.advanced-eschatonics.com. I was inspired by whtwnd and how they use my pds to log me in. I also am the head of AI Rearch and Development at a startup and a lot of what I do is getting software running at app-name.startup.com. 
 
 
 ```bash
@@ -38,4 +39,23 @@ I planned at first to insert the codemirror editor I put together for myst with 
 
 And I did. I got a shitload done today and yesterday. Whatever things I want to kick my ass about not doing whether it's math or robotics or working out or fucking more I have to give myself a pass for the past couple of days. I've been moving mountains.
 
-So my deer account is back. I don't like calling it bluesky.
+
+# Back from the dead
+
+
+So my deer account is back. I don't like calling it bluesky. I hate hate HATE the butterfly logo.
+
+I didn't miss posting. I think I posted like twice from my bsky hosted pds alt. There are a bunch more people that follow me over there, and I'm still somehow collecting followers lmao. Whatever!
+
+I know a whole lot more about hosting websites and setting up tunnels and stuff than I did this time last week. And wayland and xrandr and and and...ahhaha
+
+When [this post][test] went through I cheered. New dawn. Temples everywhere for those with eyes to see.
+
+But yeah.
+
+
+
+
+
+
+[test]: https://deer.social/profile/did:plc:6amf2dzllh6lvnsqxsr4nf6e/post/3luxtfidmnk2f
