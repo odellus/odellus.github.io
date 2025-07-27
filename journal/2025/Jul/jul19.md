@@ -176,7 +176,40 @@ I miss math. Need to center math more. Love it.
 
 # Whitewind
 
-Wow this codebase really sucks. They don't tell you how to run yourself.
+Wow this codebase really sucks. They don't tell you how to run yourself. It's all aws and vercel. Heard that the developer is a japanese guy who doesn't really speak english and didn't really have any experience with open source before creating whitewind. Project seems largely abandoned tbh. Code hasn't been touched in forever.
+
+
+# INFRASTRUCTURE WEEK(END) — NO SERIOUSLY
+
+This weekend I
+- got second monitor working on `coast-after-1` after struggling with it for a week (refresh rate was issue)
+- moved my pds service from running on advanced-eschatonics.com to pds.advanced-eschatonics.com and in the process broke my main deer social account
+- installed goat and learned what I need to do in PLC to update the service endpoint of my account
+- set up wireguard connection between my pds and my laptop so I can run services on my laptop and forward to cloud letting me expand what I can do over the internet without expanding my cloud resources or more important the bill
+- set up local code-server in preparation for running on code.advanced-eschatonics.com
+- did investigation into setting up mailcow on my local machine to forward to mail.advanced-eschatonics.com
+- did a lot of research into how I can use Caddy to set up all of these different subdomains, some of which are necessary like pds.advanced-eschatonics and mail.advanced-eschatonics and came up with an entire business
+- curled a test service I set up on my local machine from my PDS to test connection 
+
+# BUSINESS IDEA
+
+Do all the DNS and cloud configuration and everything for people for $15/month so they'll have their own suite of personal and business tools on *their own site* that they own and maintain with a little help from us.
+
+What do we do?
+
+We create droplets in digital ocean and domain names with cloudfare and set up your personal suite of products on your own personal cloud and connect your PDS and your home machine/cluster with wireguard so you can host as many products as you want at product.yourdomain.com on your local machine without paying an arm and a leg to cloud providers for compute or ISPs for a static IP.
+
+We're thinking ansible to maintain drivers, CUDA/ROCm, and ollama for inference on bare metal and use microk8s for the rest of the services. Put them all into helm charts. Create a standard. The main idea is that users really are paying mostly for setup and service support and we're transparent about the costs to digital ocean and cloudfare so that when they click disconnect in the UI or run it through cli somehow all that happens is they stop getting a single bill from us and start getting bills from their cloud provider and domain registrar.
+
+I think there's a market for something like this. An entirely self hosted infrastructure composed of open source software that uses the cloud as a bridge and your local machine as the mainframe. I eventually want to move beyond just making hardware suggestions to people and setting them up in digital ocean and get to the point where we're selling them compute both locally and in the cloud. I really want to take the hybrid model to another level. Like if we're building all these computer, just have a clause that says we get to use 5% of the compute at all times for our own purposes and we cancel your cloud bill because now you're part of the federated cloud we have created. We can start our own damn domain registrar too and cut out middle man there.
+
+
+I pay too much to google now squarespace for my custom email account. I'm about to migrate over and from the entrepreneurship course I took a long time ago, if you solve a problem for yourself, the odds are high a lot of other people have that same problem.
+
+---
+
+
+This is a whole week's worth of progress. From "I'm going to get started with whtwnd" to "I am going to turn my pds droplet into a digital identity I own and run email, vs code, open-webui, my own bsky viewer app, the works on my local machine and connect to the droplet through wireguard.
 
 [unitree-r1]: https://www.unitree.com/R1
 [hope-jr]: https://github.com/TheRobotStudio/HOPEJr
