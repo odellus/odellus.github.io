@@ -22,6 +22,7 @@ Quck rundown of the immortal science
 :class: col-gutter-right align-middle
 ```{image} ./articles/images/to-the-cowards-at-nyt.png
 :alt: Taking over the world y'all
+:height: 60%
 ```
 ````
 ````{div}
@@ -29,5 +30,5 @@ Quck rundown of the immortal science
 
 [**A letter from Humberto**](/articles/letter-from-humberto)
 
-Quck rundown of the immortal science
+This is a callout
 ````
