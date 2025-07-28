@@ -14,8 +14,10 @@ This page describes some of books I'm working on
 ````{div}
 :class: col-body-right
 
-**Scientific Computing with Python**
+[**Scientific Computing with Python**][books]
 
 The world needs more scientific computing with python notebooks.
 ````
 
+
+[books]: books/scientific-computing-with-python

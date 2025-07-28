@@ -54,8 +54,21 @@ When [this post][test] went through I cheered. New dawn. Temples everywhere for 
 But yeah.
 
 
+# Blender update
+
+I did open up the STL meshes at the same time in blender and it was less impossible than FreeCAD to view them at the same time, but I still haven't figured out how to get scale working yet. Suppose it's time to watch some youtube videos. Dammit!!
 
 
+
+
+# Holy fucking shit!
+
+So yeah I might want to figure out a way to stage this somewhere else, then build an apply. I really could serve this with a npm serve on the static files form the pds. It's a static site. Having it update in real time live like this is pretty fucking wild.
+
+
+So yeah all that shit I was talking about code.advanced-eschatonics and openwebui.advanced-eschatonics and pds.advanced-eschatonics? Well.... so I did it. I generated obscenely long passwords for the services and left them open for now. I'll figure out how to put them behind OICD or an oauth proxy with caddy sooner or later.
+
+Well fuck me! I have a homelab! God damn! The idea I'll be able to log in to my home machine from anywhere is kind of daunting. Thus the obscenely long passwords.
 
 
 [test]: https://deer.social/profile/did:plc:6amf2dzllh6lvnsqxsr4nf6e/post/3luxtfidmnk2f

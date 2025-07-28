@@ -18,3 +18,16 @@ Less sequential pieces from me than you'll find in [Journal](./journal)
 Quck rundown of the immortal science
 ````
 
+````{div}
+:class: col-gutter-right align-middle
+```{image} ./articles/images/to-the-cowards-at-nyt.png
+:alt: Taking over the world y'all
+```
+````
+````{div}
+:class: col-body-left
+
+[**A letter from Humberto**](/articles/letter-from-humberto)
+
+Quck rundown of the immortal science
+````
