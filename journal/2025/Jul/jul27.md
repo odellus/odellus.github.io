@@ -71,4 +71,77 @@ So yeah all that shit I was talking about code.advanced-eschatonics and openwebu
 Well fuck me! I have a homelab! God damn! The idea I'll be able to log in to my home machine from anywhere is kind of daunting. Thus the obscenely long passwords.
 
 
+# `homelab`
+
+So I am posting long form over here folks. I do wish I had this interacting with my pds. I should take the time to create my own longform blog like whtwnd but form jupyter book projects.
+
+
+```mermaid
+graph TD
+    subgraph "Public Internet"
+        Users[Users]
+        DNS[DNS: advanced-eschatonics.com]
+    end
+
+    subgraph "DigitalOcean Droplet (1GB RAM, 25GB)"
+        Caddy[Caddy Reverse Proxy]
+        PDS[PDS Server]
+    end
+
+    subgraph "Home Server via WireGuard"
+        WG[WireGuard Tunnel]
+        Myst[MyST Blog Server<br/>uv run nox]
+        Code[code-server]
+        OpenWebUI[OpenWebUI]
+    end
+
+    Users -->|HTTPS| DNS
+    DNS -->|A Record| Caddy
+    
+    Caddy -->|pds.advanced-eschatonics.com| PDS
+    Caddy -->|advanced-eschatonics.com<br/>www.advanced-eschatonics.com<br/>blog.advanced-eschatonics.com| WG
+    Caddy -->|code.advanced-eschatonics.com| WG
+    Caddy -->|openwebui.advanced-eschatonics.com| WG
+    
+    WG --> Myst
+    WG --> Code
+    WG --> OpenWebUI
+
+    style PDS fill:#f9f,stroke:#333
+    style Myst fill:#9f9,stroke:#333
+    style Code fill:#99f,stroke:#333
+    style OpenWebUI fill:#ff9,stroke:#333
+    style Caddy fill:#f96,stroke:#333
+    style WG fill:#6cf,stroke:#333
+```
+
+Started out as a vision last week. Now we're there. Only 23:19 on a Sunday evening! Hahahahaha ready for my weekend now that I've done the job I've been putting off for forever.
+
+
+```
+graph LR
+    subgraph "Public Internet"
+        internet-->droplet["DigitalOcean Droplet"]
+    end
+
+    subgraph "Home Server"
+        homeServer["Home Server\n(1GB RAM/25GB)"]--wireguard-->"WireGuard Tunnel"
+        homeServer--caddy-->"Caddy Reverse Proxy"
+    end
+
+    subgraph "Services"
+        pds["PDS\n(pds.advanced-eschatonics.com)"]
+        blog["Blog/Website\n(advanced-eschatonics.com)"]
+        coder["Coder Server\n(code.advanced-eschatonics.com)"]
+        openwebui["OpenWebUI\n(openwebui.advanced-eschatonics.com)"]
+    end
+
+    droplet--reverseProxy-->"Caddy Reverse Proxy"
+    "Caddy Reverse Proxy"--https-->homeServer
+    homeServer--serviceRouting-->pds
+    homeServer--serviceRouting-->blog
+    homeServer--serviceRouting-->coder
+    homeServer--serviceRouting-->openwebui
+```
+
 [test]: https://deer.social/profile/did:plc:6amf2dzllh6lvnsqxsr4nf6e/post/3luxtfidmnk2f

@@ -209,7 +209,7 @@ I pay too much to google now squarespace for my custom email account. I'm about 
 ---
 
 
-This is a whole week's worth of progress. From "I'm going to get started with whtwnd" to "I am going to turn my pds droplet into a digital identity I own and run email, vs code, open-webui, my own bsky viewer app, the works on my local machine and connect to the droplet through wireguard.
+This is a whole week's worth of progress. From "I'm going to get started with whtwnd" to "I am going to turn my pds droplet into a digital identity I own and run email, vs code, open-webui, my own bsky viewer app, the works on my local machine and connect to the droplet through wireguard."
 
 [unitree-r1]: https://www.unitree.com/R1
 [hope-jr]: https://github.com/TheRobotStudio/HOPEJr

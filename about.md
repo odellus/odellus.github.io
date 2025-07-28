@@ -89,31 +89,37 @@ Studied applied mathematics while doing protein-structure prediction for synthet
 ^^^
 :::{mermaid}
 graph TD;
-  %% Main major changes
-  A["Premed Biology Major"] -->|"Took Organic Chemistry"| B["Chemistry Major"];
-  B -->|"Calculus for Engineers (fell in love)"| C["Mathematics Major"];
+ classDef partial stroke-dasharray: 5 5;
+ class BioNear,ChemNear,MathNear partial;
 
-  %% Parallel physics track
-  A -->|"Physics I"| P1["Physics Track Begins"];
-  P1 --> P2["Modern Physics, Quantum Mechanics"];
-  P2 --> P3["Advanced/Upper-Level Physics </br> (Optics, Quantum Field Theory)"];
+ %% Main major changes
+ A["Premed Biology Major"] -->|"Took Organic Chemistry"| B["Chemistry Major"];
+ B -->|"Calculus for Engineers (fell in love)"| C["Mathematics Major"];
 
-  %% Cross-links showing concurrent enrollment
-  B --> P2;
-  C --> P3;
+ %% Parallel physics track
+ A -->|"Physics I"| P1["Physics Track Begiins"];
+ P1 --> P2["Modern Physics, Quantum Mechanics"];
+ P2 --> P3["Advanced/Upper-Level Physics </br> (Optics, Quantum Field Theory)"];
 
-  %% Final degree decision
-  P3 -->|"Last-minute major change"| F["BS Physics"];
+ %% Cross-links showing concurrent enrollment
+ B --> P2;
+ C --> P3;
 
-  %% Near-complete degrees
-  A --> BioNear["Biology Degree (few classes left)"];
-  B --> ChemNear["Chemistry Degree (P-Chem II & Quant left)"];
-  C --> MathNear["Mathematics Degree (Abstract Algebra & Topology left)"];
-  
-  %% Styling
-  classDef partial stroke-dasharray: 5 5;
-  class BioNear,ChemNear,MathNear partial;
+ %% Final degree decision
+ P3 -->|"Last-minute major change"| F["BS Physics"];
+
+ %% Near-complete degrees
+ A --> BioNear["Biology Degree (few classes left)"];
+ B --> ChemNear["Chemistry Degree (P-Chem II & Quant left)"];
+ C --> MathNear["Mathematics Degree (Abstract Algebra & Topology left)"];
+
+ %% Styling
+ class BioNear,ChemNear,MathNear partial;
+ linkStyle 8 stroke-dasharray: 5 5;
+ linkStyle 9 stroke-dasharray: 5 5;
+ linkStyle 10 stroke-dasharray: 5 5;
 :::
 :::::
+
 
 :::::::
