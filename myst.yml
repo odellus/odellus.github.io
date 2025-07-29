@@ -42,6 +42,8 @@ project:
 site:
   template: book-theme
   options:
+    url: https://advanced-eschatonics.com
+    image_cdn: https:/img.advanced-eschatonics.com
     folders: true
     logo_text: Thomas Wood
     favicon: _static/profile-color-circle-small.png
