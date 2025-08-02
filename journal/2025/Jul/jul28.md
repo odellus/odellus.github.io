@@ -1,5 +1,10 @@
 ---
 date: "2025-07-28"
+title: "Advanced Eschatonics"
+---
+
+---
+date: "2025-07-28"
 title: "Gauss Law"
 ---
 
@@ -69,8 +74,21 @@ Synthetic developmental biology – where scientists *build or manipulate develo
 **Sources:** Recent literature and reports (April–July 2025) were used to compile these findings, including cutting-edge research articles in *Nature*, *Nature Communications*, *Development*, and others, as well as science news releases. These sources provide detailed accounts of the breakthroughs summarized above, reflecting the rapidly evolving state of single-cell analysis, computational modeling, and synthetic developmental systems.
 
 
-How are we doing here?
 
-:::{figure} ../images/grow_tower_jun16.jpg
-Kicking ass and taking names
+--- 
+
+# Website
+
+I finally got the damn website working right. Before none of the images would render anywhere beside my local computer because of how myst start works. There are two servers. One for the page, one for the static content.
+
+Anyway I figured it out and now my site is just static content. Tried to figure out how to get caddy to serve it with `file_server` but gave up on that quickly.
+
+
+I started pulling everything into docker compose. I thought it was sooo easy to set up openwebui, phoenix, and litellm. And it is. Each of them separately outside of docker. Once you start connecting all of them to postgres and need to do things in a particular order and connect the phoenix collectors and all that it becomes a hassle. I'm still about it, but taking it easier than just staying awake another 48 hours resolving everything like I did during this design phase.
+
+
+:::{figure} ../images/advanced-eschatonics.jpg
+immanentize - by me
 :::
+
+

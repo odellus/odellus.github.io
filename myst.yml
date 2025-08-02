@@ -38,12 +38,15 @@ project:
             - title: July
               children:
                 - pattern: journal/2025/Jul/**{.ipynb,.md}
+            - title: August
+              children:
+                - pattern: journal/2025/Aug/**{.ipynb,.md}
   thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
   options:
     url: https://advanced-eschatonics.com
-    image_cdn: https:/img.advanced-eschatonics.com
+    base: /
     folders: true
     logo_text: Thomas Wood
     favicon: _static/profile-color-circle-small.png

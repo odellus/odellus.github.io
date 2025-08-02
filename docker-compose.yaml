@@ -2,43 +2,7 @@ services:
   odellus-blog:
     build: .
     ports:
-      - "3017:3000"
+      - "3000:3000"
     volumes:
       - .:/app:cached
-    command: ["myst", "start"]
-
-  phoenix:
-    image: arizephoenix/phoenix:latest # Must be greater than 4.0 version to work
-    depends_on:
-      - db
-    ports:
-      - 6006:6006  # PHOENIX_PORT
-      - 4317:4317  # PHOENIX_GRPC_PORT
-    environment:
-      - PHOENIX_SQL_DATABASE_URL=postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/postgres
-      - PHOENIX_ENABLE_AUTH=${PHOENIX_ENABLE_AUTH}
-      - PHOENIX_SECRET=${PHOENIX_SECRET}
-  db:
-    image: postgres
-    restart: always
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=postgres
-    ports:
-      - 5432
-    volumes:
-      - ${HOME}/postgres:/var/lib/postgresql/data
-
-  # TODO:
-
-  # SearXNG
-
-  # code-server
-
-
-
-# VOLUMES
-volumes:
-  database_data:
-    driver: local
+    command: ["npx", "serve", "-p", "3000", "_build/html"]

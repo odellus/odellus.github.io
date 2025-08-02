@@ -15,9 +15,14 @@ RUN pip install uv && \
     uv pip install -r requirements.txt -r execute-requirements.txt
 
 # install mystmd globally (via npm)
-RUN npm install -g mystmd
+RUN npm install -g mystmd serve
+
+
+
 
 WORKDIR /app
-EXPOSE 3000
 
-CMD ["myst", "start"]
+# Build site
+RUN myst build --html
+
+CMD ["npx", "serve", "-p", "3000", "_build/html"]
