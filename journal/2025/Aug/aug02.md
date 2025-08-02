@@ -69,10 +69,10 @@ So what's the big deal? Doing an orthogonalization step on the momentum $B_t$ to
 
 
 This routine calculates an approximation of the pseudoinverse square-root  
-:::{math}
+$$
 :label: pseudoinv
 U := (G G^{\sf T})^{-1/2}\;G\qquad (\text{i.e. the “left–normalised” version of }G)
-:::
+$$
 by means of **Newton–Schulz iterations** of the matrix sign function.  
 The algorithm is truncated after five explicitly unrolled steps, uses **bfloat16** for the bulk of the computation and avoids taking an explicit `sqrt`.
 
@@ -88,28 +88,28 @@ If the matrix is **wide** ($n>m$) we work with the **transpose** to stay with a 
 
 Let $A_k := X_{k} X_{k}^{\sf T}$ and keep $A_{k}$ in **bfloat16**.  
 For each $k=0,\dots,\text{steps}-1$:
-:::{math}
+$$
 \begin{aligned}
 B_k &:= \beta\, A_k + \gamma\, A_k^{2},\\[2mm]
 X_{k+1} &:= \alpha\, X_k + B_k X_k,
 \end{aligned}
-:::
+$$
 with the tabulated coefficients
-:::{math}
+$$
 \alpha=3.4445,\quad \beta=-4.7750,\quad \gamma=2.0315.
-:::
+$$
 These constants were obtained by a *polynomial fit* to the third-order Newton–Schulz iteration ([Hale–Higham–Trefethen, 2008][matrix-func-computing]).  In exact arithmetic the recurrence realises a **rational function** $p,q\in \mathbb Q[x]$:
-:::{math}
+$$
 X_{k+1}= p(A_k) X_k q(A_k)^{-1}
-:::
+$$
 that approximates the sign-function of $A$ at unit circle – hence driving the singular values of $A_k$ to 1.
 
 ###  **Transpose back**
 
 If the original $G$ was wide we set  
-:::{math}
+$$
 \boxed{U\ \text{return} := X_{\text{steps}}^{\sf T}}
-::: 
+$$ 
 
 yielding the required pseudo-inverse matrix Eqn.[](#pseudoinv)
 $$
