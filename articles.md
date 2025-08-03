@@ -2,7 +2,6 @@
 
 Less sequential pieces from me than you'll find in [Journal](./journal)
 
-## Political Economics
 
 ````{div}
 :class: col-gutter-left align-middle
@@ -35,3 +34,20 @@ This is a callout
 
 ```
 ````
+---
+
+
+````{div}
+:class: col-gutter-left align-middle
+```{image} ./articles/images/woodian-condensate.png
+:alt: Taking over the world y'all
+```
+````
+````{div}
+:class: col-body-right align-right
+
+[**Woodian-Condensate**](/articles/woodian-condensate)
+
+A particularly insane response from Kimi K2
+````  
+---

@@ -1,10 +1,10 @@
 ---
 date: "2025-08-03"
-title: "3 Aug 2025"
+title: "plan-execute"
 ---
 
 :::{tip} My version of plan-execute
-This comes from [plan-execute][plan-execute] tutorial on langgraph's doc site.
+This comes from [plan-execute][plan-execute] tutorial on langgraph's doc site. I have put it in its [own repo][my-plan-execute] too 
 :::
 
 # Imports
