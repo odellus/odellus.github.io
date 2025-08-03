@@ -160,12 +160,13 @@ $$
     \operatorname{sign}(z)=\frac{z}{|z|}=e^{\theta i}.
     $$
     The scalar iteration used inside Newton–Schulz is  
-    $$
+    :::{math}
+    :label: ns-scalar
     x_{k+1}=x_k\left[
           \frac{3+x_k^2}{1+3x_k^2}
     \right]=
     x_k\cdot q_2^{-1}(x_k^2)\;,
-    $$
+    :::
     a formula that is indeed $X_{k+1}= X_k + \tfrac12 X_k(I-X_k^2)(I+3X_k^2)^{-1}$ after cancelling the quadratic remainder.  Nevertheless, to avoid an explicit inversion we expand this rational function as a **third-degree polynomial** in the *variable* $a:=x_k^2$ (or in matrix form $A_k=X_kX_k^{\sf T}$).  One obtains
 
     $$
