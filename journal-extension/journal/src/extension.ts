@@ -43,6 +43,14 @@ function createJournalEntry() {
     const fileName = `${monthShort}${day.toString().padStart(2, '0')}.md`;
     const filePath = path.join(monthDir, fileName);
     
+    if (fs.existsSync(filePath)) {
+        const openPath = vscode.Uri.file(filePath);
+        vscode.workspace.openTextDocument(openPath).then(doc => {
+        vscode.window.showTextDocument(doc);
+        });
+        return;
+    }
+
     // Create the file content
     const content = `---
 date: "${year}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}"
