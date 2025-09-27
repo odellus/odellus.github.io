@@ -30,7 +30,7 @@ project:
             - pattern: books/Scientific-Computing-with-Python/**{.ipynb,.md}
     - file: journal.md
       children:
-        - title: '2025'
+        - title: "2025"
           children:
             - title: June
               children:
@@ -41,6 +41,9 @@ project:
             - title: August
               children:
                 - pattern: journal/2025/Aug/**{.ipynb,.md}
+            - title: September
+              children:
+                - pattern: journal/2025/Sep/**{.ipynb,.md}
   thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
