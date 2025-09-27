@@ -1,6 +1,6 @@
 ---
 date: "2025-08-24"
-title: DSPy.jl when?
+title: DS.jl when?
 ---
 
 So I've really gotten into julia over the past few days. Friday morning I sat down with trae-agent and zed and wrote a [whole little agent][openai-tool-calling-jl]. And now I've got the bug. It started with "I'm going to sit down and create my own programming language with MLIR because I can some weekend" and I never did it but I have been researching AD in modern programming languages including mojo and rust and other LLVM based languages that MLIR can differentiate with things like enzyme.
@@ -9,7 +9,11 @@ And I'm a roboticist so a python-like syntax that's as fast as C is pretty much 
 
 Of course that's now what we want to do is it class? Why else would we write up a tool calling example using openai endpoint in julia if we weren't aiming for a full julia stack, including for inference?
 
-So I'm investigating the structure of DSPy with a fine toothed comb. Perusing things so I have an idea of how to do a minimal example using like GEPA to create an optimal trae-agent and it's all in julia before I try to port the whole functionality, because DSPy has a lot of functionality that I do actually want to port over but you know, priorities.
+So I'm investigating the structure of DSPy with a fine toothed comb. Perusing things so I have an idea of how to do a minimal example using like [GEPA][gepa] to create an optimal trae-agent and it's all in julia before I try to port the whole functionality, because DSPy has a lot of functionality that I do actually want to port over but you know, priorities.
+
+:::{figure} ../images/gepa.png
+Pretty impressive
+:::
 
 
 So yeah I want to create the bare bones for a DSPy like system in julia that does the whole tracing learning updating prompts that are attached to the signatures/modules.
