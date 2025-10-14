@@ -20,9 +20,9 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
-    - file: articles.md
-      children:
-        - pattern: articles/**.md
+    # - file: articles.md
+    #   children:
+    #     - pattern: articles/**.md
     - file: books.md
       children:
         - title: Scientific Computing with Python
@@ -44,6 +44,9 @@ project:
             - title: September
               children:
                 - pattern: journal/2025/Sep/**{.ipynb,.md}
+            - title: October
+              children:
+                - pattern: journal/2025/Oct/**{.ipynb,.md}
   thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
@@ -61,8 +64,8 @@ site:
       url: /about
     - title: Projects
       url: /projects
-    - title: Articles
-      url: /articles
+    # - title: Articles
+    #   url: /articles
     - title: Books
       url: /books
     - title: Journal

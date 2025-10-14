@@ -2,7 +2,7 @@ services:
   odellus-blog:
     build: .
     ports:
-      - "3000:3000"
+      - "3019:3000"
     volumes:
       - .:/app:cached
     command: ["npx", "serve", "-p", "3000", "_build/html"]
