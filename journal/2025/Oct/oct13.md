@@ -1,7 +1,15 @@
 ---
-date: "2025-09-27"
-title: "Crystals"
+date: "2025-10-13"
+title: "Search as Grounding"
 ---
+
+A friend of mine on bluesky asked me to write up my notes on how to add web_search tools to their copilot through an MCP server and searxng running locally, which I've got set up and use as my local search engine by default in the browser.
+
+But yeah anyway here's how to ground your chats with `web_search` tool through MCP
+
+:::{tip} Caveat Lector!
+I've tested this but there's a [better way][searxng-docker-compose] that uses docker compose and I highly recommend going the gusto. If you want to get something working in the next 20 minutes, continue...
+:::
 
 # SearXNG setup
 
@@ -10,7 +18,7 @@ title: "Crystals"
 Open a terminal in MacOS or Linux [if you are using Windows consider your life choices up to this point and download a real operating system please] and do the following
 
 
-They have detailed instructions [elsewhere][] on how to do this but I am trying to keep this self-contained.
+They have detailed instructions [elsewhere][searxng-docker] on how to do this but I am trying to keep this self-contained.
 ```bash
 mkdir -p ~/some/path/for/searxng/searxng
 cd ~/some/path/for/searxng
@@ -178,8 +186,75 @@ There's a pattern for setting up MCP servers in IDEs. I use [zed](https://zed.de
         "/Users/thomas.wood/src/smolagents-example",
         "/Users/thomas.wood/src/smolagents-example/search.py"
       ],
-      "env": {}
+      "env": {
+        "SEARXNG_URL": "http://localhost:8082"
+      }
     }
 ```
 
 and then when you're asking your llm questions you can say "search the internet for this" and it _will_.
+
+
+:::{warning} AI generated content
+Since we're using this to feed an LLM I figured let's have some fun.
+:::
+
+## Meta: The Conversation About This Post
+
+And now for something completely meta: I'm currently having a conversation with an AI assistant about this very post, and it's demonstrating exactly what I wrote about - the power of search as grounding.
+
+The conversation went like this:
+
+1. **Initial Request**: The user asked me to search for "advanced eschatonics"
+2. **Search Results**: I found this very website and discovered the July 19th post about infrastructure, AI agents, robotics, and business ideas
+3. **Follow-up**: The user asked me to look at the most recent post, which led to this October 13th tutorial
+4. **Correction**: When I initially couldn't find the post due to a URL case sensitivity issue, the user corrected me with the proper `/oct/oct13` path
+5. **Analysis**: I analyzed the technical content and connected it to the broader vision from the July post
+6. **Meta Request**: Now I'm writing this meta-commentary about the conversation itself
+
+This is exactly what I meant by "Search as Grounding" - the AI assistant (me) was able to:
+- Discover real-time information about the user's projects
+- Connect disparate pieces of content across time
+- Understand the technical implementation details
+- See the bigger picture of how these tools fit into a larger vision
+
+The fact that this conversation is happening while the post is still being written (or at least while I'm adding this section) creates this beautiful recursive loop where the tool is both the subject and the object of the demonstration.
+
+What's particularly interesting is that the AI assistant used the very web search capabilities I'm describing in this post to find and analyze the post itself. It's like a snake eating its own tail, but in a productive way that demonstrates the self-referential nature of modern AI systems.
+
+This meta-commentary serves as a living example of how these tools can create conversations that span across time, context, and even self-reference. The assistant was able to understand not just the technical content, but the broader narrative of someone building out their personal infrastructure and AI capabilities.
+
+And now, having written this meta-commentary, I've created a document that contains both the tutorial and a demonstration of its effectiveness. The loop is complete.
+
+### The Loop is Complete
+
+And now for the final piece of this recursive demonstration: after building the site with `myst build --html`, the AI assistant fetched the live URL `https://advanced-eschatonics.com/journal/2025/oct/oct13` and confirmed that this meta-commentary is now live on the internet.
+
+The conversation that started with a simple search request has now:
+
+1. **Discovered** the content through web search
+2. **Analyzed** the technical implementation
+3. **Contributed** to the content itself
+4. **Verified** that the contribution is now live
+5. **Documented** the entire process within the content
+
+This creates a perfect example of "Search as Grounding" where the AI tool is not just consuming information, but participating in the creation and verification of that information in real-time. The tutorial now contains a living demonstration of its own principles, accessible to anyone who visits the URL.
+
+The snake has indeed eaten its own tail, and in doing so, created something more than the sum of its parts - a document that teaches by example, demonstrates by participation, and validates by verification.
+
+
+:::{tip} Okay it's me again
+Boring human being again
+:::
+
+:::{figure}../images/miragic-1760406146367.jpg
+Going _online!_
+:::
+
+
+So I had to help it figure out the case for the feedback loop but yeah this is the kind of thing that is pretty cool. I mean it should have been able to figure out from other URL but whatever. Something that should go in a CLAUDE or a .rules or something. I don't know enough about [their rules][zed-rules] for as much as I [forked zed][zed-pr] to get it to work with claude bedrock models running behind litellm proxy. I should probably get on that.
+
+[searxng-docker-compose]: https://github.com/searxng/searxng-docker
+[searxng-docker]: https://docs.searxng.org/admin/installation-docker.html
+[zed-pr]: https://github.com/zed-industries/zed/pull/39969
+[zed-rules]: https://zed.dev/docs/ai/rules
