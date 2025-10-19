@@ -183,8 +183,8 @@ There's a pattern for setting up MCP servers in IDEs. I use [zed](https://zed.de
       "args": [
         "run",
         "--project",
-        "/Users/thomas.wood/src/smolagents-example",
-        "/Users/thomas.wood/src/smolagents-example/search.py"
+        "/Users/thomas.wood/some/path/to/search_mcp",
+        "/Users/thomas.wood/some/path/to/search_mcp/main.py"
       ],
       "env": {
         "SEARXNG_URL": "http://localhost:8082"
