@@ -47,6 +47,9 @@ project:
             - title: October
               children:
                 - pattern: journal/2025/Oct/**{.ipynb,.md}
+            - title: November
+              children:
+                - pattern: journal/2025/Nov/**{.ipynb,.md}
   thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
