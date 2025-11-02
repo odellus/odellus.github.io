@@ -20,6 +20,10 @@ project:
     - file: index.md
     - file: about.md
     - file: projects.md
+      children:
+        - title: Julia Development
+          children:
+            - pattern: projects/julia-aot-llm-development-pipeline/**.md
     # - file: articles.md
     #   children:
     #     - pattern: articles/**.md
