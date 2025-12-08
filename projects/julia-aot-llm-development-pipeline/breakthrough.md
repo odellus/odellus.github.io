@@ -1,6 +1,7 @@
-Local LLM (Qwen3-Coder-30B) 
+```
+Local LLM (Qwen3-Coder-30B)
     ↓ Julia Code Generation
-Reactant.jl (MLIR Backend)  
+Reactant.jl (MLIR Backend)
     ↓ GPU Optimization
 JuliaC (AOT Compilation)
     ↓ Standalone Binary
@@ -10,10 +11,10 @@ JuliaC (AOT Compilation)
 
 ### Success Metrics
 
-**Executable**: `julia_agent` (1.75MB)  
-**Bundled Libraries**: 183MB including Julia runtime  
-**Performance**: Instant execution - NO JIT compilation delays!  
-**Hardware**: AMD Ryzen AI Max+ 395 + 128GB RAM  
+**Executable**: `julia_agent` (1.75MB)
+**Bundled Libraries**: 183MB including Julia runtime
+**Performance**: Instant execution - NO JIT compilation delays!
+**Hardware**: AMD Ryzen AI Max+ 395 + 128GB RAM
 
 ### Working Code Example
 
@@ -23,15 +24,15 @@ module agent_project
 
 function @main(ARGS)
     println(Core.stdout, "AOT Julia Agent Starting...")
-    
+
     # Basic agent functionality
     println(Core.stdout, "Agent initialized successfully!")
     println(Core.stdout, "Ready for directed evolution workflows...")
-    
+
     # Example computation to verify Julia is working
     result = sum(1:100)
     println(Core.stdout, "Test computation: sum(1:100) = $result")
-    
+
     println(Core.stdout, "Agent execution complete!")
     return 0
 end
@@ -161,7 +162,7 @@ true
 We have successfully demonstrated the technical foundation for:
 
 1. **Expressive Development**: Julia's high-level syntax
-2. **Native Performance**: AOT compiled binaries  
+2. **Native Performance**: AOT compiled binaries
 3. **GPU Acceleration**: Reactant.jl MLIR backend
 4. **Self-Containment**: No external dependencies
 5. **Zero API Costs**: Local LLM fine-tuning pipeline
@@ -173,7 +174,7 @@ We have successfully demonstrated the technical foundation for:
 - **Status**: ✅ ROCm support restored, GPU acceleration working
 - **Benefits**: MLIR backend optimization, multi-target compilation
 
-#### JuliaC AOT Compilation  
+#### JuliaC AOT Compilation
 - **Purpose**: Production-ready Julia binaries
 - **Status**: ✅ Working standalone executables
 - **Benefits**: Instant execution, self-contained deployment
@@ -188,15 +189,11 @@ We have successfully demonstrated the technical foundation for:
 ### Cost Comparison
 
 **API-Dependent Development (Before):**
-- $30 per coding attempt
-- pass@8 = $240 per problem
-- Limited iteration due to costs
-- Cloud API latency (500ms-2000ms)
-- Development bottlenecks
+I spent $30 in a day getting an LLM to help me write a langgraph type pattern in julia
 
 **Local AOT Pipeline (After):**
 - $0 API costs (post-hardware investment)
-- Unlimited iteration capabilities  
+- Unlimited iteration capabilities
 - Instant execution (<1ms startup)
 - Full hardware utilization
 - No external dependencies
@@ -274,7 +271,7 @@ This breakthrough represents a fundamental shift in how Julia development and AI
 ### Key Takeaways
 
 - ✅ AOT Julia compilation is production-ready
-- ✅ Reactant.jl enables GPU-optimized development  
+- ✅ Reactant.jl enables GPU-optimized development
 - ✅ Local LLM fine-tuning eliminates API costs forever
 - ✅ Hardware investment pays for itself rapidly
 - ✅ This is the future of AI-assisted development

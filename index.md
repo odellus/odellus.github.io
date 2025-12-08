@@ -37,7 +37,7 @@ Books I'm working on 📚
 :::
 :::{grid-item-card}
 :link: journal.md
-My journal ✍️ 
+My journal ✍️
 :::
 ::::
 
@@ -63,5 +63,3 @@ Working on a hybrid setup that combines local development with executable books,
 :::{postlist}
 :number: 10
 :::
-
-
