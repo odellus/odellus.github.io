@@ -57,6 +57,12 @@ project:
             - title: December
               children:
                 - pattern: journal/2025/Dec/**{.ipynb,.md}
+        - title: "2026"
+          children:
+            - title: January
+              children:
+                - pattern: journal/2026/Jan/**{.ipynb,.md}
+
   thumbnail: _static/social-banner.jpg
 site:
   template: book-theme
