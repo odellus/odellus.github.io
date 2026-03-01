@@ -62,6 +62,9 @@ project:
             - title: January
               children:
                 - pattern: journal/2026/Jan/**{.ipynb,.md}
+            - title: February
+              children:
+                - pattern: journal/2026/Feb/**{.ipynb,.md}
 
   thumbnail: _static/social-banner.jpg
 site:

@@ -1,6 +1,7 @@
 services:
   odellus-blog:
     build: .
+    restart: always
     ports:
       - "3019:3000"
     volumes:
